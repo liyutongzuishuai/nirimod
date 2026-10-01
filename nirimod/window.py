@@ -974,6 +974,34 @@ class NiriModWindow(Adw.ApplicationWindow):
         updates_grp.add(auto_update_row)
         page.add(updates_grp)
 
+        # Language group
+        lang_grp = Adw.PreferencesGroup(
+            title="Language",
+            description="Select the application language (requires restart)",
+        )
+
+        lang_row = Adw.ComboRow(
+            title="Application Language",
+            subtitle="Changes take effect after restarting NiriMod",
+        )
+        lang_model = Gtk.StringList()
+        lang_model.append("System Default")
+        lang_model.append("Chinese (Simplified) - 中文(简体)")
+        lang_row.set_model(lang_model)
+        current_lang = app_settings.get("language", "")
+        if current_lang == "zh_CN":
+            lang_row.set_selected(1)
+        else:
+            lang_row.set_selected(0)
+        lang_row.connect(
+            "notify::selected",
+            lambda row, _: app_settings.set(
+                "language", "zh_CN" if row.get_selected() == 1 else ""
+            ),
+        )
+        lang_grp.add(lang_row)
+        page.add(lang_grp)
+
         config_grp = Adw.PreferencesGroup(
             title="Configuration File",
             description="Manage Niri configuration paths and backups",

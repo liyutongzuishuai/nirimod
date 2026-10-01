@@ -1,11 +1,14 @@
 from __future__ import annotations
 
+import gettext
 import json
+import locale
 import os
 from pathlib import Path
 
 _SETTINGS_DIR = Path(os.path.expanduser("~/.config/nirimod"))
 _SETTINGS_FILE = _SETTINGS_DIR / "settings.json"
+LOCALE_DIR = Path(__file__).parent / "locale"
 
 _DEFAULTS: dict = {
     "auto_update": True,
@@ -13,6 +16,7 @@ _DEFAULTS: dict = {
     "backup_path": "",
     "auto_backup": True,
     "backup_limit": 10,
+    "language": "",  # Empty = system default, "zh_CN" = Chinese
 }
 
 _cache: dict | None = None
@@ -38,6 +42,24 @@ def _save(data: dict):
     _SETTINGS_DIR.mkdir(parents=True, exist_ok=True)
     _SETTINGS_FILE.write_text(json.dumps(data, indent=2))
     _cache = data
+
+
+def apply_language():
+    """Apply the language setting from preferences."""
+    lang = get("language", "")
+    if lang:
+        os.environ["LANGUAGE"] = lang
+        os.environ["LC_ALL"] = lang
+        os.environ["LANG"] = lang
+        locale.setlocale(locale.LC_ALL, lang)
+        # Update gettext
+        gettext.bindtextdomain("nirimod", str(LOCALE_DIR))
+        gettext.textdomain("nirimod")
+    else:
+        # Use system default
+        locale.setlocale(locale.LC_ALL, "")
+        gettext.bindtextdomain("nirimod", str(LOCALE_DIR))
+        gettext.textdomain("nirimod")
 
 
 def get(key: str, default=None):

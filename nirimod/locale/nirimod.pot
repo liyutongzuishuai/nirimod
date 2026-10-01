@@ -1,0 +1,471 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: nirimod 0.5.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-01 00:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: nirimod/__main__.py:54
+msgid "NiriMod"
+msgstr ""
+
+#: nirimod/window.py:107
+msgid "niri is not running — changes will be saved but not applied live"
+msgstr ""
+
+#: nirimod/window.py:190 nirimod/window.py:236
+msgid "Input"
+msgstr ""
+
+#: nirimod/window.py:190 nirimod/window.py:236
+msgid "Display"
+msgstr ""
+
+#: nirimod/window.py:190 nirimod/window.py:236
+msgid "Workspace"
+msgstr ""
+
+#: nirimod/window.py:190 nirimod/window.py:236
+msgid "System"
+msgstr ""
+
+#: nirimod/window.py:190 nirimod/window.py:236
+msgid "Advanced"
+msgstr ""
+
+#: nirimod/window.py:236
+msgid "Outputs"
+msgstr ""
+
+#: nirimod/window.py:236
+msgid "Key Bindings"
+msgstr ""
+
+#: nirimod/window.py:236
+msgid "Appearance"
+msgstr ""
+
+#: nirimod/window.py:236
+msgid "Animations"
+msgstr ""
+
+#: nirimod/window.py:236
+msgid "Layout"
+msgstr ""
+
+#: nirimod/window.py:236
+msgid "Workspaces"
+msgstr ""
+
+#: nirimod/window.py:236
+msgid "Window Rules"
+msgstr ""
+
+#: nirimod/window.py:236
+msgid "Startup"
+msgstr ""
+
+#: nirimod/window.py:236
+msgid "Environment"
+msgstr ""
+
+#: nirimod/window.py:236
+msgid "Gestures & Misc"
+msgstr ""
+
+#: nirimod/window.py:236
+msgid "Raw Config"
+msgstr ""
+
+#: nirimod/window.py:272
+msgid "Unsaved changes"
+msgstr ""
+
+#: nirimod/window.py:278
+msgid "Undo"
+msgstr ""
+
+#: nirimod/window.py:284
+msgid "Redo"
+msgstr ""
+
+#: nirimod/window.py:291
+msgid "Discard"
+msgstr ""
+
+#: nirimod/window.py:298
+msgid "Save & Apply"
+msgstr ""
+
+#: nirimod/window.py:805
+msgid "Don't show this again on startup"
+msgstr ""
+
+#: nirimod/window.py:897
+msgid "Available Backups"
+msgstr ""
+
+#: nirimod/window.py:904
+msgid "Taken on first launch"
+msgstr ""
+
+#: nirimod/window.py:906
+msgid "Restore"
+msgstr ""
+
+#: nirimod/window.py:953
+msgid "NiriMod Preferences"
+msgstr ""
+
+#: nirimod/window.py:958
+msgid "General"
+msgstr ""
+
+#: nirimod/window.py:961
+msgid "Updates"
+msgstr ""
+
+#: nirimod/window.py:962
+msgid "Control how NiriMod checks for new versions"
+msgstr ""
+
+#: nirimod/window.py:966
+msgid "Check for Updates Automatically"
+msgstr ""
+
+#: nirimod/window.py:967
+msgid "Checks the GitHub repository for new commits on launch"
+msgstr ""
+
+#: nirimod/window.py:979
+msgid "Language"
+msgstr ""
+
+#: nirimod/window.py:980
+msgid "Select the application language (requires restart)"
+msgstr ""
+
+#: nirimod/window.py:984
+msgid "Application Language"
+msgstr ""
+
+#: nirimod/window.py:985
+msgid "Changes take effect after restarting NiriMod"
+msgstr ""
+
+#: nirimod/window.py:1006
+msgid "Configuration File"
+msgstr ""
+
+#: nirimod/window.py:1007
+msgid "Manage Niri configuration paths and backups"
+msgstr ""
+
+#: nirimod/window.py:1010
+msgid "Config Path"
+msgstr ""
+
+#: nirimod/window.py:1031
+msgid "Backup Directory"
+msgstr ""
+
+#: nirimod/window.py:1055
+msgid "Automatic Backups"
+msgstr ""
+
+#: nirimod/window.py:1056
+msgid "Create a timestamped backup before saving"
+msgstr ""
+
+#: nirimod/window.py:1066
+msgid "Backup Limit"
+msgstr ""
+
+#: nirimod/window.py:1067
+msgid "Maximum number of backups to keep per file (0 = unlimited)"
+msgstr ""
+
+#: nirimod/window.py:1016 nirimod/window.py:1037
+msgid "Browse..."
+msgstr ""
+
+#: nirimod/window.py:1171
+msgid "Saved Profiles"
+msgstr ""
+
+#: nirimod/window.py:1235
+msgid "Saved Profiles"
+msgstr ""
+
+#: nirimod/pages/input_page.py:100
+msgid "Keyboard"
+msgstr ""
+
+#: nirimod/pages/input_page.py:105
+msgid "Pointer Behavior"
+msgstr ""
+
+#: nirimod/pages/input_page.py:270
+msgid "Touchpad"
+msgstr ""
+
+#: nirimod/pages/input_page.py:373
+msgid "Mouse"
+msgstr ""
+
+#: nirimod/pages/input_page.py:448
+msgid "Trackpoint"
+msgstr ""
+
+#: nirimod/pages/input_page.py:453
+msgid "Cursor"
+msgstr ""
+
+#: nirimod/pages/outputs.py:100
+msgid "Monitor Selection"
+msgstr ""
+
+#: nirimod/pages/outputs.py:698
+#, python-format
+msgid "Output: %s"
+msgstr ""
+
+#: nirimod/pages/layout.py:36
+msgid "General"
+msgstr ""
+
+#: nirimod/pages/layout.py:105
+msgid "Default Column Width"
+msgstr ""
+
+#: nirimod/pages/layout.py:164
+msgid "Preset Column Widths (proportions)"
+msgstr ""
+
+#: nirimod/pages/layout.py:182
+msgid "Struts (outer gaps, px)"
+msgstr ""
+
+#: nirimod/pages/appearance.py:59
+msgid "Shadow"
+msgstr ""
+
+#: nirimod/pages/appearance.py:132
+msgid "Blur"
+msgstr ""
+
+#: nirimod/pages/appearance.py:289
+msgid "Window Geometry"
+msgstr ""
+
+#: nirimod/pages/animations.py:510
+msgid "Global Settings"
+msgstr ""
+
+#: nirimod/pages/animations.py:515
+msgid "Enable Animations"
+msgstr ""
+
+#: nirimod/pages/animations.py:516
+msgid "Toggle all desktop animations on or off"
+msgstr ""
+
+#: nirimod/pages/animations.py:530
+msgid "Global Slowdown Factor"
+msgstr ""
+
+#: nirimod/pages/animations.py:531
+msgid "Multiply all animation durations by this factor"
+msgstr ""
+
+#: nirimod/pages/animations.py:550
+msgid "Easing Curve Editor"
+msgstr ""
+
+#: nirimod/pages/bindings.py:679
+msgid "Key Combination"
+msgstr ""
+
+#: nirimod/pages/bindings.py:702
+msgid "Action"
+msgstr ""
+
+#: nirimod/pages/bindings.py:717
+msgid "Options"
+msgstr ""
+
+#: nirimod/pages/window_rules.py:351
+msgid "Window Rules"
+msgstr ""
+
+#: nirimod/pages/window_rules.py:354
+msgid "Layer Rules"
+msgstr ""
+
+#: nirimod/pages/startup.py:27
+msgid "Startup Programs"
+msgstr ""
+
+#: nirimod/pages/environment.py:63
+msgid "Environment Variables"
+msgstr ""
+
+#: nirimod/pages/gestures.py:40
+msgid "Hot Corners"
+msgstr ""
+
+#: nirimod/pages/gestures.py:94
+msgid "Hotkey Overlay"
+msgstr ""
+
+#: nirimod/pages/gestures.py:110
+msgid "Screenshot"
+msgstr ""
+
+#: nirimod/pages/gestures.py:125
+msgid "Overview"
+msgstr ""
+
+#: nirimod/pages/workspaces.py:27
+msgid "Named Workspaces"
+msgstr ""
+
+#: nirimod/pages/workspaces.py:51
+msgid "Workspace"
+msgstr ""
+
+#: nirimod/pages/raw_config.py:54
+msgid "Raw Config"
+msgstr ""
+
+#: nirimod/window.py:773
+msgid "Welcome to NiriMod"
+msgstr ""
+
+#: nirimod/window.py:778
+msgid "Not Now"
+msgstr ""
+
+#: nirimod/window.py:778
+msgid "Create Backup"
+msgstr ""
+
+#: nirimod/window.py:793
+msgid "Enjoying NiriMod?"
+msgstr ""
+
+#: nirimod/window.py:830
+msgid "Update Available"
+msgstr ""
+
+#: nirimod/window.py:835
+msgid "Later"
+msgstr ""
+
+#: nirimod/window.py:836
+msgid "Update in Terminal"
+msgstr ""
+
+#: nirimod/window.py:801
+msgid "Maybe Later"
+msgstr ""
+
+#: nirimod/window.py:802
+msgid "Support on Ko-fi"
+msgstr ""
+
+#: nirimod/window.py:923
+msgid "Confirm Restore"
+msgstr ""
+
+#: nirimod/window.py:924
+msgid "Your current configuration will be replaced by this backup. You may want to manually save your current work first."
+msgstr ""
+
+#: nirimod/window.py:926
+msgid "Cancel"
+msgstr ""
+
+#: nirimod/window.py:927
+msgid "Restore"
+msgstr ""
+
+#: nirimod/window.py:650
+msgid "Configuration Validation Failed"
+msgstr ""
+
+#: nirimod/window.py:651
+msgid "Niri rejected the configuration syntax:"
+msgstr ""
+
+#: nirimod/window.py:653
+msgid "Close"
+msgstr ""
+
+#: nirimod/window.py:654
+msgid "Open in Raw Config"
+msgstr ""
+
+#: nirimod/pages/animations.py:491
+msgid "Community Preset Active"
+msgstr ""
+
+#: nirimod/pages/animations.py:492
+msgid "You are currently using a preset. Switch back to use your custom animation settings."
+msgstr ""
+
+#: nirimod/pages/animations.py:684
+msgid "Downloaded Presets"
+msgstr ""
+
+#: nirimod/pages/animations.py:693
+msgid "No presets downloaded yet"
+msgstr ""
+
+#: nirimod/pages/animations.py:694
+msgid "Use the download button (↓) next to any online preset below."
+msgstr ""
+
+#: nirimod/pages/animations.py:874
+msgid "Fetching presets…"
+msgstr ""
+
+#: nirimod/pages/animations.py:886
+msgid "Unable to fetch presets"
+msgstr ""
+
+#: nirimod/pages/animations.py:909
+msgid "Fetching presets…"
+msgstr ""
+
+#: nirimod/pages/animations.py:918
+msgid "Unable to fetch presets"
+msgstr ""
+
+#: nirimod/pages/animations.py:941
+msgid "Nirimation Community Presets"
+msgstr ""
+
+#: nirimod/pages/animations.py:953
+msgid "Niri Animation Collection"
+msgstr ""
+
+#: nirimod/pages/animations.py:1146
+msgid "System Default"
+msgstr ""
+
+#: nirimod/pages/animations.py:1146
+msgid "Chinese (Simplified) - 中文(简体)"
+msgstr ""
