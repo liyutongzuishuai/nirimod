@@ -10,6 +10,7 @@ gi.require_version("Adw", "1")
 from gi.repository import Adw, Gdk, Gtk
 
 from nirimod import app_settings
+_ = app_settings._
 from nirimod.kdl_parser import KdlNode, find_or_create, set_child_arg, set_node_flag
 from nirimod.pages.base import BasePage
 from nirimod.window_effects import (

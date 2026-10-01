@@ -376,7 +376,7 @@ class AnimationsPage(BasePage):
             logger.error(f"Failed to save animations state: {e}")
 
     def build(self) -> Gtk.Widget:
-        tb, header, _, _ = self._make_toolbar_page("")
+        tb, header, __, __ = self._make_toolbar_page("")
         header.set_title_widget(Gtk.Box())  # hide the default title
 
         # Custom Header (matches Workspace View / Keybindings aesthetic)

@@ -52,7 +52,7 @@ class GesturesPage(BasePage):
         # Which individual corners are active
         active_corners: set[str] = set()
         if hc_node and not hc_off:
-            for corner_key, _, _ in _CORNERS:
+            for corner_key, __, ___ in _CORNERS:
                 if hc_node.get_child(corner_key) is not None:
                     active_corners.add(corner_key)
 

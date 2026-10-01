@@ -21,7 +21,7 @@ _ = app_settings._
 
 class RawConfigPage(BasePage):
     def build(self) -> Gtk.Widget:
-        tb, header, _, content = self._make_toolbar_page("Raw Config")
+        tb, header, __, content = self._make_toolbar_page("Raw Config")
         self._content = content
 
         self._scroll_positions: dict[Path, tuple[float, float]] = {}

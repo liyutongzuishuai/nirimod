@@ -74,7 +74,7 @@ FLOATING_POSITION_PRESETS = [
 ]
 CUSTOM_FLOATING_POSITION_LABEL = "Custom"
 FLOATING_POSITION_LOCATION_LABELS = [
-    label for label, _ in FLOATING_POSITION_PRESETS
+    label for label, __ in FLOATING_POSITION_PRESETS
 ] + [CUSTOM_FLOATING_POSITION_LABEL]
 FLOATING_POSITION_CUSTOM_FIELD_LABELS = ["X Offset (px)", "Y Offset (px)"]
 CUSTOM_FLOATING_POSITION_INDEX = len(FLOATING_POSITION_PRESETS)
@@ -96,7 +96,7 @@ SIZE_PERCENT_PRESETS = [
     ("75%", 0.75),
     ("100%", 1.0),
 ]
-SIZE_MODE_LABELS = [label for label, _ in SIZE_PERCENT_PRESETS] + [
+SIZE_MODE_LABELS = [label for label, __ in SIZE_PERCENT_PRESETS] + [
     "Custom %",
     "Fixed (px)",
 ]
@@ -336,7 +336,7 @@ def _layer_rule_summary(rule: KdlNode) -> tuple[str, str]:
 
 class WindowRulesPage(BasePage):
     def build(self) -> Gtk.Widget:
-        tb, header, _, content = self._make_toolbar_page("Window Rules")
+        tb, header, __, content = self._make_toolbar_page("Window Rules")
         self._content = content
 
         add_win_btn = Gtk.Button(label="Add Window Rule")

@@ -19,7 +19,7 @@ _ = app_settings._
 
 class WorkspacesPage(BasePage):
     def build(self) -> Gtk.Widget:
-        tb, header, _, content = self._make_toolbar_page(_("Workspaces"))
+        tb, header, __, content = self._make_toolbar_page(_("Workspaces"))
         self._content = content
 
         add_btn = Gtk.Button(icon_name="list-add-symbolic")

@@ -18,7 +18,7 @@ _ = app_settings._
 
 class EnvironmentPage(BasePage):
     def build(self) -> Gtk.Widget:
-        tb, header, _, content = self._make_toolbar_page(_("Environment"))
+        tb, header, __, content = self._make_toolbar_page(_("Environment"))
         self._content = content
 
         # Add button has been moved to the page body for better visibility

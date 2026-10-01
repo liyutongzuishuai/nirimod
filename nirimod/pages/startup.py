@@ -19,7 +19,7 @@ from nirimod.startup_entries import make_startup_node, startup_values_from_node
 
 class StartupPage(BasePage):
     def build(self) -> Gtk.Widget:
-        tb, header, _, content = self._make_toolbar_page(_("Startup Programs"))
+        tb, header, __, content = self._make_toolbar_page(_("Startup Programs"))
         self._content = content
 
         self.refresh()
