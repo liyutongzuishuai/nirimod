@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nirimod 0.5.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-01 15:49+0800\n"
+"POT-Creation-Date: 2026-10-01 17:00+0800\n"
 "PO-Revision-Date: 2025-10-01 00:00+0800\n"
 "Last-Translator: Auto <auto@example.com>\n"
 "Language-Team: Chinese (Simplified)\n"
@@ -429,6 +429,14 @@ msgstr "配置方案 '{name}' 已加载"
 msgid "Profile '{name}' deleted"
 msgstr "配置方案 '{name}' 已删除"
 
+#: nirimod/pages/animations.py:412
+msgid "Custom"
+msgstr "自定义"
+
+#: nirimod/pages/animations.py:413
+msgid "Presets"
+msgstr "预设"
+
 #: nirimod/pages/animations.py:494
 msgid "Community Preset Active"
 msgstr "社区预设已启用"
@@ -439,14 +447,17 @@ msgid ""
 "settings."
 msgstr ""
 
+#: nirimod/pages/animations.py:499
+msgid "Switch to Custom"
+msgstr "切换到自定义"
+
 #: nirimod/pages/animations.py:513
 msgid "Global Settings"
 msgstr "全局设置"
 
 #: nirimod/pages/animations.py:518
-#, fuzzy
 msgid "Enable Animations"
-msgstr "动画"
+msgstr "启用动画"
 
 #: nirimod/pages/animations.py:519
 msgid "Toggle all desktop animations on or off"
@@ -464,6 +475,10 @@ msgstr "将所有动画时长乘以此因子"
 msgid "Easing Curve Editor"
 msgstr "缓动曲线编辑器"
 
+#: nirimod/pages/animations.py:584
+msgid "Quick Presets"
+msgstr "快速预设"
+
 #: nirimod/pages/animations.py:687
 msgid "Downloaded Presets"
 msgstr "已下载的预设"
@@ -475,6 +490,20 @@ msgstr "尚未下载预设"
 #: nirimod/pages/animations.py:697
 msgid "Use the download button (↓) next to any online preset below."
 msgstr "使用下方任意在线预设旁的下载按钮 (↓)。"
+
+#: nirimod/pages/animations.py:749 nirimod/pages/animations.py:987
+msgid "Apply"
+msgstr "应用"
+
+#: nirimod/pages/animations.py:773 nirimod/pages/animations.py:1052
+#, fuzzy
+msgid "Apply Preset"
+msgstr "添加预设"
+
+#: nirimod/pages/animations.py:805
+#, fuzzy, python-brace-format
+msgid "Delete failed: {error}"
+msgstr "恢复失败: {error}"
 
 #: nirimod/pages/animations.py:877 nirimod/pages/animations.py:912
 msgid "Fetching presets…"
@@ -491,6 +520,30 @@ msgstr "Nirimation 社区预设"
 #: nirimod/pages/animations.py:956
 msgid "Niri Animation Collection"
 msgstr "Niri 动画集合"
+
+#: nirimod/pages/animations.py:974
+#, fuzzy
+msgid "Download preset for offline use"
+msgstr "已下载的预设"
+
+#: nirimod/pages/animations.py:1007
+#, python-brace-format
+msgid "Downloading {name}…"
+msgstr "正在下载 {name}…"
+
+#: nirimod/pages/animations.py:1024
+#, fuzzy, python-brace-format
+msgid "Download failed: {error}"
+msgstr "备份失败: {error}"
+
+#: nirimod/pages/animations.py:1068
+#, python-brace-format
+msgid "Downloading {name}..."
+msgstr "正在下载 {name}..."
+
+#: nirimod/pages/animations.py:1098
+msgid "Preset has no animations block — nothing applied."
+msgstr "预设没有动画块 — 无应用内容。"
 
 #: nirimod/pages/animations.py:1154
 msgid "Enabled"
@@ -509,111 +562,111 @@ msgstr "缓动曲线"
 msgid "Default"
 msgstr "系统默认"
 
-#: nirimod/pages/appearance.py:60
+#: nirimod/pages/appearance.py:61
 msgid "Shadow"
 msgstr "阴影"
 
-#: nirimod/pages/appearance.py:63
+#: nirimod/pages/appearance.py:64
 msgid "Enable Shadows"
 msgstr "启用阴影"
 
-#: nirimod/pages/appearance.py:75
+#: nirimod/pages/appearance.py:76
 msgid "Softness (blur radius)"
 msgstr "柔和度 (模糊半径)"
 
-#: nirimod/pages/appearance.py:93
+#: nirimod/pages/appearance.py:94
 msgid "Spread"
 msgstr "扩散"
 
-#: nirimod/pages/appearance.py:107 nirimod/pages/appearance.py:109
+#: nirimod/pages/appearance.py:108 nirimod/pages/appearance.py:110
 msgid "Shadow Color"
 msgstr "阴影颜色"
 
-#: nirimod/pages/appearance.py:120
+#: nirimod/pages/appearance.py:121
 msgid "Draw Behind Window"
 msgstr "绘制在窗口后"
 
-#: nirimod/pages/appearance.py:121
+#: nirimod/pages/appearance.py:122
 msgid "Fixes corner artifacts with non-CSD apps"
 msgstr "修复非 CSD 应用的角落伪影"
 
-#: nirimod/pages/appearance.py:134
+#: nirimod/pages/appearance.py:135
 msgid "Blur (Global)"
 msgstr "模糊 (全局)"
 
-#: nirimod/pages/appearance.py:143
+#: nirimod/pages/appearance.py:144
 msgid "Enable Blur Effects"
 msgstr "启用模糊效果"
 
-#: nirimod/pages/appearance.py:144
+#: nirimod/pages/appearance.py:145
 msgid "Controls the compositor-level blur { off } setting"
 msgstr "控制合成器级别的模糊 { off } 设置"
 
-#: nirimod/pages/appearance.py:154
+#: nirimod/pages/appearance.py:155
 msgid "Force Blur on Windows"
 msgstr "强制窗口模糊"
 
-#: nirimod/pages/appearance.py:155
+#: nirimod/pages/appearance.py:156
 msgid "Adds background-effect { blur true } to the global window rule"
 msgstr "向全局窗口规则添加 background-effect { blur true }"
 
-#: nirimod/pages/appearance.py:165
+#: nirimod/pages/appearance.py:166
 msgid "Keep Focused Windows Blurred"
 msgstr "保持聚焦窗口模糊"
 
-#: nirimod/pages/appearance.py:166
+#: nirimod/pages/appearance.py:167
 msgid "Adds a focused-window rule that forces blur on"
 msgstr "添加一个强制模糊的聚焦窗口规则"
 
-#: nirimod/pages/appearance.py:176
+#: nirimod/pages/appearance.py:177
 msgid "Use Xray Wallpaper Blur"
 msgstr "使用 Xray 壁纸模糊"
 
-#: nirimod/pages/appearance.py:177
+#: nirimod/pages/appearance.py:178
 msgid "Use wallpaper-only blur; disable for regular background blur"
 msgstr "仅使用壁纸模糊；禁用以使用常规背景模糊"
 
-#: nirimod/pages/appearance.py:191
+#: nirimod/pages/appearance.py:192
 msgid "Window Opacity (1 = unset)"
 msgstr "窗口不透明度 (1 = 未设置)"
 
-#: nirimod/pages/appearance.py:206
+#: nirimod/pages/appearance.py:207
 msgid "Draw Border With Background"
 msgstr "绘制带背景的边框"
 
-#: nirimod/pages/appearance.py:207
+#: nirimod/pages/appearance.py:208
 msgid "Disable to avoid focus colors behind translucent windows"
 msgstr "禁用以避免半透明窗口后的聚焦颜色"
 
-#: nirimod/pages/appearance.py:220
+#: nirimod/pages/appearance.py:221
 msgid "Passes"
 msgstr "遍数"
 
-#: nirimod/pages/appearance.py:237
+#: nirimod/pages/appearance.py:238
 msgid "Offset"
 msgstr "偏移"
 
-#: nirimod/pages/appearance.py:254
+#: nirimod/pages/appearance.py:255
 msgid "Noise"
 msgstr "噪点"
 
-#: nirimod/pages/appearance.py:274
+#: nirimod/pages/appearance.py:275
 msgid "Saturation"
 msgstr "饱和度"
 
-#: nirimod/pages/appearance.py:290
+#: nirimod/pages/appearance.py:291
 msgid "Window Geometry"
 msgstr "窗口几何"
 
-#: nirimod/pages/appearance.py:295
+#: nirimod/pages/appearance.py:296
 msgid "Corner Radius (px)"
 msgstr "圆角半径 (像素)"
 
-#: nirimod/pages/appearance.py:317
+#: nirimod/pages/appearance.py:318
 msgid "Enable"
 msgstr "启用"
 
-#: nirimod/pages/appearance.py:329
+#: nirimod/pages/appearance.py:330
 msgid "Width (px)"
 msgstr "宽度 (像素)"
 

@@ -409,8 +409,8 @@ class AnimationsPage(BasePage):
         switcher_box.add_css_class("linked")
         switcher_box.set_valign(Gtk.Align.START)
 
-        self._btn_custom = Gtk.ToggleButton(label="Custom")
-        self._btn_presets = Gtk.ToggleButton(label="Presets")
+        self._btn_custom = Gtk.ToggleButton(label=_("Custom"))
+        self._btn_presets = Gtk.ToggleButton(label=_("Presets"))
         self._btn_presets.set_group(self._btn_custom)
 
         self._btn_custom.connect("toggled", self._on_view_toggle)
@@ -496,7 +496,7 @@ class AnimationsPage(BasePage):
         )
         self._custom_switch_row.add_css_class("property")
         self._custom_switch_row.set_icon_name("emblem-important-symbolic")
-        switch_btn = Gtk.Button(label="Switch to Custom")
+        switch_btn = Gtk.Button(label=_("Switch to Custom"))
         switch_btn.add_css_class("suggested-action")
         switch_btn.add_css_class("pill")
         switch_btn.set_valign(Gtk.Align.CENTER)
@@ -581,7 +581,7 @@ class AnimationsPage(BasePage):
         # Right: quick presets
         presets_vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=16)
         presets_vbox.set_valign(Gtk.Align.CENTER)
-        preset_title = Gtk.Label(label="Quick Presets", xalign=0)
+        preset_title = Gtk.Label(label=_("Quick Presets"), xalign=0)
         preset_title.add_css_class("heading")
         presets_vbox.append(preset_title)
 
@@ -746,7 +746,7 @@ class AnimationsPage(BasePage):
         row.add_suffix(del_btn)
 
         # Apply button
-        apply_btn = Gtk.Button(label="Apply")
+        apply_btn = Gtk.Button(label=_("Apply"))
         apply_btn.add_css_class("suggested-action")
         apply_btn.add_css_class("pill")
         apply_btn.set_valign(Gtk.Align.CENTER)
@@ -770,7 +770,7 @@ class AnimationsPage(BasePage):
                 ),
             )
             dialog.add_response("cancel", "Cancel")
-            dialog.add_response("apply", "Apply Preset")
+            dialog.add_response("apply", _("Apply Preset"))
             dialog.set_response_appearance("apply", Adw.ResponseAppearance.SUGGESTED)
             dialog.set_default_response("cancel")
             dialog.set_close_response("cancel")
@@ -802,7 +802,7 @@ class AnimationsPage(BasePage):
             self.show_toast(f"{entry['display_name']} deleted")
             self._refresh_local_presets_group()
         except OSError as exc:
-            self.show_toast(f"Delete failed: {exc}")
+            self.show_toast(_("Delete failed: {error}").format(error=exc))
 
     def _on_restore_previous(self, _btn):
         """Restore the animations block that was saved before the last preset apply."""
@@ -971,7 +971,7 @@ class AnimationsPage(BasePage):
 
         # Download-to-disk button
         dl_btn = Gtk.Button(icon_name="folder-download-symbolic")
-        dl_btn.set_tooltip_text("Download preset for offline use")
+        dl_btn.set_tooltip_text(_("Download preset for offline use"))
         dl_btn.add_css_class("flat")
         dl_btn.add_css_class("circular")
         dl_btn.set_valign(Gtk.Align.CENTER)
@@ -984,7 +984,7 @@ class AnimationsPage(BasePage):
         row.add_suffix(dl_btn)
 
         # Apply button
-        apply_btn = Gtk.Button(label="Apply")
+        apply_btn = Gtk.Button(label=_("Apply"))
         apply_btn.add_css_class("suggested-action")
         apply_btn.add_css_class("pill")
         apply_btn.set_valign(Gtk.Align.CENTER)
@@ -1004,7 +1004,7 @@ class AnimationsPage(BasePage):
         dest_file = dest_dir / entry["name"]
 
         dl_btn.set_sensitive(False)
-        self.show_toast(f"Downloading {entry['display_name']}…", timeout=5)
+        self.show_toast(_("Downloading {name}…").format(name=entry['display_name']), timeout=5)
 
         def _worker():
             try:
@@ -1021,7 +1021,7 @@ class AnimationsPage(BasePage):
         def _on_done(kdl_bytes, error):
             dl_btn.set_sensitive(True)
             if error:
-                self.show_toast(f"Download failed: {error}")
+                self.show_toast(_("Download failed: {error}").format(error=error))
                 return
             try:
                 dest_dir.mkdir(parents=True, exist_ok=True)
@@ -1049,7 +1049,7 @@ class AnimationsPage(BasePage):
                 ),
             )
             dialog.add_response("cancel", "Cancel")
-            dialog.add_response("apply", "Apply Preset")
+            dialog.add_response("apply", _("Apply Preset"))
             dialog.set_response_appearance("apply", Adw.ResponseAppearance.SUGGESTED)
             dialog.set_default_response("cancel")
             dialog.set_close_response("cancel")
@@ -1065,7 +1065,7 @@ class AnimationsPage(BasePage):
 
     def _apply_nirimation_preset(self, entry, row):
         row.set_sensitive(False)
-        self.show_toast(f"Downloading {entry['display_name']}...", timeout=5)
+        self.show_toast(_("Downloading {name}...").format(name=entry['display_name']), timeout=5)
 
         def _worker():
             try:
@@ -1095,7 +1095,7 @@ class AnimationsPage(BasePage):
                 (n for n in preset_nodes if n.name == "animations"), None
             )
             if preset_anim is None:
-                self.show_toast("Preset has no animations block — nothing applied.")
+                self.show_toast(_("Preset has no animations block — nothing applied."))
                 return
 
             user_nodes = self._nodes
