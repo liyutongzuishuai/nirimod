@@ -1,0 +1,164 @@
+# Chinese translations for nirimod package.
+# Copyright (C) 2025 THE nirimod'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the nirimod package.
+# Automatically generated, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nirimod 0.5.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-01 00:00+0000\n"
+"PO-Revision-Date: 2025-10-01 00:00+0800\n"
+"Last-Translator: Auto <auto@example.com>\n"
+"Language-Team: Chinese (Simplified)\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "NiriMod"
+msgstr "NiriMod 配置器"
+
+msgid "niri is not running — changes will be saved but not applied live"
+msgstr "niri 未运行 — 更改将被保存但不会实时生效"
+
+msgid "Input"
+msgstr "输入设备"
+
+msgid "Display"
+msgstr "显示器"
+
+msgid "Workspace"
+msgstr "工作区"
+
+msgid "System"
+msgstr "系统"
+
+msgid "Advanced"
+msgstr "高级"
+
+msgid "Outputs"
+msgstr "输出配置"
+
+msgid "Key Bindings"
+msgstr "快捷键"
+
+msgid "Appearance"
+msgstr "外观"
+
+msgid "Animations"
+msgstr "动画"
+
+msgid "Layout"
+msgstr "布局"
+
+msgid "Workspaces"
+msgstr "工作区管理"
+
+msgid "Window Rules"
+msgstr "窗口规则"
+
+msgid "Startup"
+msgstr "开机自启"
+
+msgid "Environment"
+msgstr "环境变量"
+
+msgid "Gestures & Misc"
+msgstr "手势与杂项"
+
+msgid "Raw Config"
+msgstr "原始配置"
+
+msgid "Unsaved changes"
+msgstr "未保存的更改"
+
+msgid "Undo"
+msgstr "撤销"
+
+msgid "Redo"
+msgstr "重做"
+
+msgid "Discard"
+msgstr "放弃"
+
+msgid "Save & Apply"
+msgstr "保存并应用"
+
+msgid "Don't show this again on startup"
+msgstr "启动时不再显示"
+
+msgid "Available Backups"
+msgstr "可用备份"
+
+msgid "Taken on first launch"
+msgstr "首次启动时创建"
+
+msgid "Restore"
+msgstr "恢复"
+
+msgid "NiriMod Preferences"
+msgstr "NiriMod 首选项"
+
+msgid "General"
+msgstr "常规"
+
+msgid "Updates"
+msgstr "更新"
+
+msgid "Control how NiriMod checks for new versions"
+msgstr "控制 NiriMod 如何检查新版本"
+
+msgid "Check for Updates Automatically"
+msgstr "自动检查更新"
+
+msgid "Checks the GitHub repository for new commits on launch"
+msgstr "启动时检查 GitHub 仓库的新提交"
+
+msgid "Language"
+msgstr "语言"
+
+msgid "Select the application language (requires restart)"
+msgstr "选择应用程序语言（需要重启）"
+
+msgid "Application Language"
+msgstr "应用语言"
+
+msgid "Changes take effect after restarting NiriMod"
+msgstr "更改将在重启 NiriMod 后生效"
+
+msgid "Configuration File"
+msgstr "配置文件"
+
+msgid "Manage Niri configuration paths and backups"
+msgstr "管理 Niri 配置文件路径和备份"
+
+msgid "Config Path"
+msgstr "配置文件路径"
+
+msgid "Backup Directory"
+msgstr "备份目录"
+
+msgid "Automatic Backups"
+msgstr "自动备份"
+
+msgid "Create a timestamped backup before saving"
+msgstr "保存前创建带时间戳的备份"
+
+msgid "Backup Limit"
+msgstr "备份数量限制"
+
+msgid "Maximum number of backups to keep per file (0 = unlimited)"
+msgstr "每个文件保留的最大备份数（0 = 不限制）"
+
+msgid "Browse..."
+msgstr "浏览..."
+
+msgid "Saved Profiles"
+msgstr "已保存的配置方案"
+
+msgid "System Default"
+msgstr "系统默认"
+
+msgid "Chinese (Simplified) - 中文(简体)"
+msgstr "简体中文"

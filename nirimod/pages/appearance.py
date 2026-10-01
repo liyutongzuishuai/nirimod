@@ -9,6 +9,7 @@ gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 from gi.repository import Adw, Gdk, Gtk
 
+from nirimod import app_settings
 from nirimod.kdl_parser import KdlNode, find_or_create, set_child_arg, set_node_flag
 from nirimod.pages.base import BasePage
 from nirimod.window_effects import (
@@ -56,10 +57,10 @@ class AppearancePage(BasePage):
         b_group = self._build_border_group("Border", "border", b_node, layout)
         content.append(b_group)
 
-        shadow_grp = Adw.PreferencesGroup(title="Shadow")
+        shadow_grp = Adw.PreferencesGroup(title=_("Shadow"))
         shadow_node = layout.get_child("shadow") or KdlNode("shadow")
 
-        shadow_on_row = Adw.SwitchRow(title="Enable Shadows")
+        shadow_on_row = Adw.SwitchRow(title=_("Enable Shadows"))
         shadow_on_row.set_active(shadow_node.get_child("on") is not None)
         shadow_on_row.connect(
             "notify::active", lambda r, _: self._set_shadow_flag("on", r.get_active())
@@ -71,7 +72,7 @@ class AppearancePage(BasePage):
             value=soft_val, lower=0, upper=100, step_increment=1
         )
         softness_row = Adw.SpinRow(
-            title="Softness (blur radius)", adjustment=softness_adj, digits=0
+            title=_("Softness (blur radius)"), adjustment=softness_adj, digits=0
         )
 
         softness_row._last_val = soft_val
@@ -89,7 +90,7 @@ class AppearancePage(BasePage):
         spread_adj = Gtk.Adjustment(
             value=spread_val, lower=-50, upper=100, step_increment=1
         )
-        spread_row = Adw.SpinRow(title="Spread", adjustment=spread_adj, digits=0)
+        spread_row = Adw.SpinRow(title=_("Spread"), adjustment=spread_adj, digits=0)
 
         spread_row._last_val = spread_val
 
@@ -103,9 +104,9 @@ class AppearancePage(BasePage):
         shadow_grp.add(spread_row)
 
         color_str = shadow_node.child_arg("color") or "#0007"
-        color_row = Adw.ActionRow(title="Shadow Color")
+        color_row = Adw.ActionRow(title=_("Shadow Color"))
         color_btn = Gtk.ColorDialogButton(
-            dialog=Gtk.ColorDialog(title="Shadow Color", with_alpha=True)
+            dialog=Gtk.ColorDialog(title=_("Shadow Color"), with_alpha=True)
         )
         color_btn.set_rgba(_parse_color(color_str))
         color_btn.set_valign(Gtk.Align.CENTER)
@@ -116,8 +117,8 @@ class AppearancePage(BasePage):
         shadow_grp.add(color_row)
 
         draw_behind_row = Adw.SwitchRow(
-            title="Draw Behind Window",
-            subtitle="Fixes corner artifacts with non-CSD apps",
+            title=_("Draw Behind Window"),
+            subtitle=_("Fixes corner artifacts with non-CSD apps"),
         )
         draw_behind_row.set_active(
             shadow_node.get_child("draw-behind-window") is not None
@@ -130,7 +131,7 @@ class AppearancePage(BasePage):
         content.append(shadow_grp)
 
         blur_grp = Adw.PreferencesGroup(
-            title="Blur (Global)",
+            title=_("Blur (Global)"),
             description=(
                 "Requires Niri 26.04 or later. Sets blur quality and optional "
                 "window blur rules."
@@ -139,8 +140,8 @@ class AppearancePage(BasePage):
         blur_node = next((n for n in nodes if n.name == "blur"), None)
 
         blur_effects_row = Adw.SwitchRow(
-            title="Enable Blur Effects",
-            subtitle="Controls the compositor-level blur { off } setting",
+            title=_("Enable Blur Effects"),
+            subtitle=_("Controls the compositor-level blur { off } setting"),
         )
         blur_effects_row.set_active(blur_effects_enabled(nodes))
         blur_effects_row.connect(
@@ -150,8 +151,8 @@ class AppearancePage(BasePage):
         blur_grp.add(blur_effects_row)
 
         blur_enabled_row = Adw.SwitchRow(
-            title="Force Blur on Windows",
-            subtitle="Adds background-effect { blur true } to the global window rule",
+            title=_("Force Blur on Windows"),
+            subtitle=_("Adds background-effect { blur true } to the global window rule"),
         )
         blur_enabled_row.set_active(global_window_blur_enabled(nodes))
         blur_enabled_row.connect(
@@ -161,8 +162,8 @@ class AppearancePage(BasePage):
         blur_grp.add(blur_enabled_row)
 
         focused_blur_row = Adw.SwitchRow(
-            title="Keep Focused Windows Blurred",
-            subtitle="Adds a focused-window rule that forces blur on",
+            title=_("Keep Focused Windows Blurred"),
+            subtitle=_("Adds a focused-window rule that forces blur on"),
         )
         focused_blur_row.set_active(focused_window_blur_enabled(nodes))
         focused_blur_row.connect(
@@ -172,8 +173,8 @@ class AppearancePage(BasePage):
         blur_grp.add(focused_blur_row)
 
         xray_row = Adw.SwitchRow(
-            title="Use Xray Wallpaper Blur",
-            subtitle="Use wallpaper-only blur; disable for regular background blur",
+            title=_("Use Xray Wallpaper Blur"),
+            subtitle=_("Use wallpaper-only blur; disable for regular background blur"),
         )
         xray_row.set_active(global_window_xray_enabled(nodes))
         xray_row.connect(
@@ -187,7 +188,7 @@ class AppearancePage(BasePage):
             value=opacity_val, lower=0.1, upper=1.0, step_increment=0.05
         )
         opacity_row = Adw.SpinRow(
-            title="Window Opacity (1 = unset)", adjustment=opacity_adj, digits=2
+            title=_("Window Opacity (1 = unset)"), adjustment=opacity_adj, digits=2
         )
 
         opacity_row._last_val = opacity_val
@@ -202,8 +203,8 @@ class AppearancePage(BasePage):
         blur_grp.add(opacity_row)
 
         border_bg_row = Adw.SwitchRow(
-            title="Draw Border With Background",
-            subtitle="Disable to avoid focus colors behind translucent windows",
+            title=_("Draw Border With Background"),
+            subtitle=_("Disable to avoid focus colors behind translucent windows"),
         )
         border_bg_row.set_active(get_global_draw_border_with_background(nodes))
         border_bg_row.connect(
@@ -216,7 +217,7 @@ class AppearancePage(BasePage):
         passes_adj = Gtk.Adjustment(
             value=passes_val, lower=0, upper=10, step_increment=1
         )
-        passes_row = Adw.SpinRow(title="Passes", adjustment=passes_adj, digits=0)
+        passes_row = Adw.SpinRow(title=_("Passes"), adjustment=passes_adj, digits=0)
 
         passes_row._last_val = passes_val
 
@@ -233,7 +234,7 @@ class AppearancePage(BasePage):
         offset_adj = Gtk.Adjustment(
             value=offset_val, lower=0.0, upper=20.0, step_increment=0.1
         )
-        offset_row = Adw.SpinRow(title="Offset", adjustment=offset_adj, digits=1)
+        offset_row = Adw.SpinRow(title=_("Offset"), adjustment=offset_adj, digits=1)
 
         offset_row._last_val = offset_val
 
@@ -250,7 +251,7 @@ class AppearancePage(BasePage):
         noise_adj = Gtk.Adjustment(
             value=noise_val, lower=0.0, upper=1.0, step_increment=0.01
         )
-        noise_row = Adw.SpinRow(title="Noise", adjustment=noise_adj, digits=2)
+        noise_row = Adw.SpinRow(title=_("Noise"), adjustment=noise_adj, digits=2)
 
         noise_row._last_val = noise_val
 
@@ -270,7 +271,7 @@ class AppearancePage(BasePage):
             value=saturation_val, lower=0.0, upper=5.0, step_increment=0.1
         )
         saturation_row = Adw.SpinRow(
-            title="Saturation", adjustment=saturation_adj, digits=1
+            title=_("Saturation"), adjustment=saturation_adj, digits=1
         )
 
         saturation_row._last_val = saturation_val
@@ -286,12 +287,12 @@ class AppearancePage(BasePage):
 
         content.append(blur_grp)
 
-        misc_grp = Adw.PreferencesGroup(title="Window Geometry")
+        misc_grp = Adw.PreferencesGroup(title=_("Window Geometry"))
 
         cr_val = get_global_corner_radius(nodes)
         cr_adj = Gtk.Adjustment(value=cr_val, lower=0, upper=40, step_increment=1)
         cr_row = Adw.SpinRow(
-            title="Corner Radius (px)",
+            title=_("Corner Radius (px)"),
             adjustment=cr_adj,
             digits=0,
         )
@@ -311,9 +312,9 @@ class AppearancePage(BasePage):
     def _build_border_group(
         self, title: str, key: str, node: KdlNode, layout: KdlNode
     ) -> Adw.PreferencesGroup:
-        grp = Adw.PreferencesGroup(title=title)
+        grp = Adw.PreferencesGroup(title=_(title))
 
-        off_row = Adw.SwitchRow(title="Enable")
+        off_row = Adw.SwitchRow(title=_("Enable"))
         off_row.set_active(node.get_child("off") is None)
         off_row.connect(
             "notify::active",
@@ -325,7 +326,7 @@ class AppearancePage(BasePage):
 
         width_val = int(node.child_arg("width") or 4)
         width_adj = Gtk.Adjustment(value=width_val, lower=1, upper=20, step_increment=1)
-        width_row = Adw.SpinRow(title="Width (px)", adjustment=width_adj, digits=0)
+        width_row = Adw.SpinRow(title=_("Width (px)"), adjustment=width_adj, digits=0)
 
         width_row._last_val = width_val
 
@@ -345,9 +346,9 @@ class AppearancePage(BasePage):
             c_str = node.child_arg(color_key) or (
                 "#7fc8ff" if "active" in color_key else "#202020"
             )
-            c_row = Adw.ActionRow(title=color_label)
+            c_row = Adw.ActionRow(title=_(color_label))
             c_btn = Gtk.ColorDialogButton(
-                dialog=Gtk.ColorDialog(title=color_label, with_alpha=True)
+                dialog=Gtk.ColorDialog(title=_(color_label), with_alpha=True)
             )
             c_btn.set_rgba(_parse_color(c_str))
             c_btn.set_valign(Gtk.Align.CENTER)

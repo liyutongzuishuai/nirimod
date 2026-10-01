@@ -1,188 +1,184 @@
-# Chinese translations for nirimod package.
-# Copyright (C) 2025 THE nirimod'S COPYRIGHT HOLDER
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the nirimod package.
-# Automatically generated, 2025.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: nirimod 0.5.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2026-10-01 15:49+0800\n"
-"PO-Revision-Date: 2025-10-01 00:00+0800\n"
-"Last-Translator: Auto <auto@example.com>\n"
-"Language-Team: Chinese (Simplified)\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: nirimod/window.py:27 nirimod/window.py:29 nirimod/pages/input_page.py:31
 msgid "Input"
-msgstr "输入设备"
+msgstr ""
 
 #: nirimod/window.py:33
 msgid "Key Bindings"
-msgstr "快捷键"
+msgstr ""
 
 #: nirimod/window.py:38
 msgid "Display"
-msgstr "显示器"
+msgstr ""
 
 #: nirimod/window.py:40
 msgid "Outputs"
-msgstr "输出配置"
+msgstr ""
 
 #: nirimod/window.py:41
 msgid "Appearance"
-msgstr "外观"
+msgstr ""
 
 #: nirimod/window.py:42
 msgid "Animations"
-msgstr "动画"
+msgstr ""
 
 #: nirimod/window.py:46
 msgid "Workspace"
-msgstr "工作区"
+msgstr ""
 
 #: nirimod/window.py:48 nirimod/pages/input_page.py:49
 #: nirimod/pages/layout.py:29
 msgid "Layout"
-msgstr "布局"
+msgstr ""
 
 #: nirimod/window.py:49 nirimod/pages/workspaces.py:22
 msgid "Workspaces"
-msgstr "工作区管理"
+msgstr ""
 
 #: nirimod/window.py:50 nirimod/pages/window_rules.py:354
 #: nirimod/pages/window_rules.py:381
 msgid "Window Rules"
-msgstr "窗口规则"
+msgstr ""
 
 #: nirimod/window.py:54
 msgid "System"
-msgstr "系统"
+msgstr ""
 
 #: nirimod/window.py:56
 msgid "Startup"
-msgstr "开机自启"
+msgstr ""
 
 #: nirimod/window.py:57 nirimod/pages/environment.py:21
 msgid "Environment"
-msgstr "环境变量"
+msgstr ""
 
 #: nirimod/window.py:58 nirimod/pages/gestures.py:33
 msgid "Gestures & Misc"
-msgstr "手势与杂项"
+msgstr ""
 
 #: nirimod/window.py:62
 msgid "Advanced"
-msgstr "高级"
+msgstr ""
 
 #: nirimod/window.py:64
 msgid "Raw Config"
-msgstr "原始配置"
+msgstr ""
 
 #: nirimod/window.py:110
 msgid "niri is not running — changes will be saved but not applied live"
-msgstr "niri 未运行 — 更改将被保存但不会实时生效"
+msgstr ""
 
 #: nirimod/window.py:131 nirimod/window.py:138
 msgid "NiriMod"
-msgstr "NiriMod 配置器"
+msgstr ""
 
 #: nirimod/window.py:145
 msgid "Search settings…"
-msgstr "搜索设置…"
+msgstr ""
 
 #: nirimod/window.py:275 nirimod/window.py:567 nirimod/window.py:573
 msgid "Unsaved changes"
-msgstr "未保存的更改"
+msgstr ""
 
 #: nirimod/window.py:281
 msgid "Undo"
-msgstr "撤销"
+msgstr ""
 
 #: nirimod/window.py:283
 msgid "Undo last change (Ctrl+Z)"
-msgstr "撤销上一次更改 (Ctrl+Z)"
+msgstr ""
 
 #: nirimod/window.py:287
 msgid "Redo"
-msgstr "重做"
+msgstr ""
 
 #: nirimod/window.py:289
 msgid "Redo (Ctrl+Shift+Z)"
-msgstr "重做 (Ctrl+Shift+Z)"
+msgstr ""
 
 #: nirimod/window.py:294
 msgid "Discard"
-msgstr "放弃"
+msgstr ""
 
 #: nirimod/window.py:297
-#, fuzzy
 msgid "Revert all unsaved changes"
-msgstr "未保存的更改"
+msgstr ""
 
 #: nirimod/window.py:301
 msgid "Save & Apply"
-msgstr "保存并应用"
+msgstr ""
 
 #: nirimod/window.py:303
 msgid "Save to config.kdl and reload niri (Ctrl+S)"
-msgstr "保存到 config.kdl 并重载 niri (Ctrl+S)"
+msgstr ""
 
 #: nirimod/window.py:567
-#, fuzzy
 msgid "Unsaved"
-msgstr "未保存的更改"
+msgstr ""
 
 #: nirimod/window.py:610
 msgid "Config saved and applied"
-msgstr "配置已保存并应用"
+msgstr ""
 
 #: nirimod/window.py:613
 #, python-brace-format
 msgid "Config saved, but reload failed: {msg}"
-msgstr "配置已保存，但重载失败: {msg}"
+msgstr ""
 
 #: nirimod/window.py:654
-#, fuzzy
 msgid "Configuration Validation Failed"
-msgstr "配置文件"
+msgstr ""
 
 #: nirimod/window.py:655
 msgid "Niri rejected the configuration syntax:"
-msgstr "Niri 拒绝了配置语法："
+msgstr ""
 
 #: nirimod/window.py:657 nirimod/window.py:1216
 msgid "Close"
-msgstr "关闭"
+msgstr ""
 
 #: nirimod/window.py:658
-#, fuzzy
 msgid "Open in Raw Config"
-msgstr "原始配置"
+msgstr ""
 
 #: nirimod/window.py:738 nirimod/window.py:743
 msgid "Copy"
-msgstr "复制"
+msgstr ""
 
 #: nirimod/window.py:777
 msgid "Welcome to NiriMod"
-msgstr "欢迎使用 NiriMod"
+msgstr ""
 
 #: nirimod/window.py:779
 msgid "Not Now"
-msgstr "稍后再说"
+msgstr ""
 
 #: nirimod/window.py:780
-#, fuzzy
 msgid "Create Backup"
-msgstr "可用备份"
+msgstr ""
 
 #: nirimod/window.py:797
 msgid "Enjoying NiriMod?"
-msgstr "喜欢 NiriMod 吗？"
+msgstr ""
 
 #: nirimod/window.py:799
 msgid ""
@@ -196,19 +192,19 @@ msgstr ""
 
 #: nirimod/window.py:804
 msgid "Maybe Later"
-msgstr "也许以后"
+msgstr ""
 
 #: nirimod/window.py:805 nirimod/pages/base.py:37
 msgid "Support on Ko-fi"
-msgstr "在 Ko-fi 上支持"
+msgstr ""
 
 #: nirimod/window.py:809
 msgid "Don't show this again on startup"
-msgstr "启动时不再显示"
+msgstr ""
 
 #: nirimod/window.py:834
 msgid "Update Available"
-msgstr "有可用更新"
+msgstr ""
 
 #: nirimod/window.py:836
 #, python-brace-format
@@ -221,25 +217,24 @@ msgstr ""
 
 #: nirimod/window.py:840
 msgid "Later"
-msgstr "稍后"
+msgstr ""
 
 #: nirimod/window.py:841
 msgid "Update in Terminal"
-msgstr "在终端中更新"
+msgstr ""
 
 #: nirimod/window.py:871
 msgid "Baseline backup created"
-msgstr "基准备份已创建"
+msgstr ""
 
 #: nirimod/window.py:873
 #, python-brace-format
 msgid "Backup failed: {error}"
-msgstr "备份失败: {error}"
+msgstr ""
 
 #: nirimod/window.py:929
-#, fuzzy
 msgid "Confirm Restore"
-msgstr "恢复"
+msgstr ""
 
 #: nirimod/window.py:931
 msgid ""
@@ -250,188 +245,183 @@ msgstr ""
 #: nirimod/window.py:934 nirimod/pages/environment.py:143
 #: nirimod/pages/startup.py:157 nirimod/pages/workspaces.py:110
 msgid "Cancel"
-msgstr "取消"
+msgstr ""
 
 #: nirimod/window.py:935
 msgid "Restore"
-msgstr "恢复"
+msgstr ""
 
 #: nirimod/window.py:953
 msgid "Config restored from backup"
-msgstr "配置已从备份恢复"
+msgstr ""
 
 #: nirimod/window.py:955
 #, python-brace-format
 msgid "Restore failed: {error}"
-msgstr "恢复失败: {error}"
+msgstr ""
 
 #: nirimod/window.py:961
 msgid "NiriMod Preferences"
-msgstr "NiriMod 首选项"
+msgstr ""
 
 #: nirimod/window.py:966 nirimod/pages/layout.py:39
 msgid "General"
-msgstr "常规"
+msgstr ""
 
 #: nirimod/window.py:969
 msgid "Updates"
-msgstr "更新"
+msgstr ""
 
 #: nirimod/window.py:970
 msgid "Control how NiriMod checks for new versions"
-msgstr "控制 NiriMod 如何检查新版本"
+msgstr ""
 
 #: nirimod/window.py:974
 msgid "Check for Updates Automatically"
-msgstr "自动检查更新"
+msgstr ""
 
 #: nirimod/window.py:975
 msgid "Checks the GitHub repository for new commits on launch"
-msgstr "启动时检查 GitHub 仓库的新提交"
+msgstr ""
 
 #: nirimod/window.py:987
 msgid "Language"
-msgstr "语言"
+msgstr ""
 
 #: nirimod/window.py:988
 msgid "Select the application language (requires restart)"
-msgstr "选择应用程序语言（需要重启）"
+msgstr ""
 
 #: nirimod/window.py:992
 msgid "Application Language"
-msgstr "应用语言"
+msgstr ""
 
 #: nirimod/window.py:993
 msgid "Changes take effect after restarting NiriMod"
-msgstr "更改将在重启 NiriMod 后生效"
+msgstr ""
 
 #: nirimod/window.py:996
 msgid "System Default"
-msgstr "系统默认"
+msgstr ""
 
 #: nirimod/window.py:997
 msgid "Chinese (Simplified) - 中文(简体)"
-msgstr "简体中文"
+msgstr ""
 
 #: nirimod/window.py:1014
 msgid "Configuration File"
-msgstr "配置文件"
+msgstr ""
 
 #: nirimod/window.py:1015
 msgid "Manage Niri configuration paths and backups"
-msgstr "管理 Niri 配置文件路径和备份"
+msgstr ""
 
 #: nirimod/window.py:1018
 msgid "Config Path"
-msgstr "配置文件路径"
+msgstr ""
 
 #: nirimod/window.py:1021 nirimod/window.py:1167
 msgid "Default (~/.config/niri/config.kdl)"
-msgstr "默认 (~/.config/niri/config.kdl)"
+msgstr ""
 
 #: nirimod/window.py:1024 nirimod/window.py:1045
 msgid "Browse..."
-msgstr "浏览..."
+msgstr ""
 
 #: nirimod/window.py:1033 nirimod/window.py:1054
-#, fuzzy
 msgid "Reset to default"
-msgstr "系统默认"
+msgstr ""
 
 #: nirimod/window.py:1039
 msgid "Backup Directory"
-msgstr "备份目录"
+msgstr ""
 
 #: nirimod/window.py:1042 nirimod/window.py:1157
 msgid "Default (~/.config/nirimod/backups)"
-msgstr "默认 (~/.config/nirimod/backups)"
+msgstr ""
 
 #: nirimod/window.py:1063
 msgid "Automatic Backups"
-msgstr "自动备份"
+msgstr ""
 
 #: nirimod/window.py:1064
 msgid "Create a timestamped backup before saving"
-msgstr "保存前创建带时间戳的备份"
+msgstr ""
 
 #: nirimod/window.py:1074
 msgid "Backup Limit"
-msgstr "备份数量限制"
+msgstr ""
 
 #: nirimod/window.py:1075
 msgid "Maximum number of backups to keep per file (0 = unlimited)"
-msgstr "每个文件保留的最大备份数（0 = 不限制）"
+msgstr ""
 
 #: nirimod/window.py:1107
 msgid "Select Niri Config"
-msgstr "选择 Niri 配置"
+msgstr ""
 
 #: nirimod/window.py:1109
 msgid "KDL files"
-msgstr "KDL 文件"
+msgstr ""
 
 #: nirimod/window.py:1123
 msgid "Restart NiriMod to use the new config path."
-msgstr "重启 NiriMod 以使用新的配置路径。"
+msgstr ""
 
 #: nirimod/window.py:1134
-#, fuzzy
 msgid "Select Backup Directory"
-msgstr "备份目录"
+msgstr ""
 
 #: nirimod/window.py:1147
-#, fuzzy
 msgid "Backup directory updated."
-msgstr "备份目录"
+msgstr ""
 
 #: nirimod/window.py:1161
-#, fuzzy
 msgid "Backup directory reset to default."
-msgstr "备份目录"
+msgstr ""
 
 #: nirimod/window.py:1169
 msgid "Restart NiriMod to use the default config path."
-msgstr "重启 NiriMod 以使用默认配置路径。"
+msgstr ""
 
 #: nirimod/window.py:1173 nirimod/pages/base.py:32
-#, fuzzy
 msgid "Profiles"
-msgstr "已保存的配置方案"
+msgstr ""
 
 #: nirimod/window.py:1181 nirimod/window.py:1245
 msgid "Saved Profiles"
-msgstr "已保存的配置方案"
+msgstr ""
 
 #: nirimod/window.py:1184 nirimod/window.py:1248
 msgid "Load"
-msgstr "加载"
+msgstr ""
 
 #: nirimod/window.py:1204 nirimod/window.py:1267
 msgid "New profile name…"
-msgstr "新配置方案名称…"
+msgstr ""
 
 #: nirimod/window.py:1206 nirimod/window.py:1269
 msgid "Save Current"
-msgstr "保存当前"
+msgstr ""
 
 #: nirimod/window.py:1224
 #, python-brace-format
 msgid "Profile '{name}' saved"
-msgstr "配置方案 '{name}' 已保存"
+msgstr ""
 
 #: nirimod/window.py:1230
 #, python-brace-format
 msgid "Profile '{name}' loaded"
-msgstr "配置方案 '{name}' 已加载"
+msgstr ""
 
 #: nirimod/window.py:1235
 #, python-brace-format
 msgid "Profile '{name}' deleted"
-msgstr "配置方案 '{name}' 已删除"
+msgstr ""
 
 #: nirimod/pages/animations.py:494
 msgid "Community Preset Active"
-msgstr "社区预设已启用"
+msgstr ""
 
 #: nirimod/pages/animations.py:495
 msgid ""
@@ -441,282 +431,275 @@ msgstr ""
 
 #: nirimod/pages/animations.py:513
 msgid "Global Settings"
-msgstr "全局设置"
+msgstr ""
 
 #: nirimod/pages/animations.py:518
-#, fuzzy
 msgid "Enable Animations"
-msgstr "动画"
+msgstr ""
 
 #: nirimod/pages/animations.py:519
 msgid "Toggle all desktop animations on or off"
-msgstr "开启或关闭所有桌面动画"
+msgstr ""
 
 #: nirimod/pages/animations.py:533
 msgid "Global Slowdown Factor"
-msgstr "全局减速因子"
+msgstr ""
 
 #: nirimod/pages/animations.py:534
 msgid "Multiply all animation durations by this factor"
-msgstr "将所有动画时长乘以此因子"
+msgstr ""
 
 #: nirimod/pages/animations.py:553
 msgid "Easing Curve Editor"
-msgstr "缓动曲线编辑器"
+msgstr ""
 
 #: nirimod/pages/animations.py:687
 msgid "Downloaded Presets"
-msgstr "已下载的预设"
+msgstr ""
 
 #: nirimod/pages/animations.py:696
 msgid "No presets downloaded yet"
-msgstr "尚未下载预设"
+msgstr ""
 
 #: nirimod/pages/animations.py:697
 msgid "Use the download button (↓) next to any online preset below."
-msgstr "使用下方任意在线预设旁的下载按钮 (↓)。"
+msgstr ""
 
 #: nirimod/pages/animations.py:877 nirimod/pages/animations.py:912
 msgid "Fetching presets…"
-msgstr "正在获取预设…"
+msgstr ""
 
 #: nirimod/pages/animations.py:889 nirimod/pages/animations.py:921
 msgid "Unable to fetch presets"
-msgstr "无法获取预设"
+msgstr ""
 
 #: nirimod/pages/animations.py:944
 msgid "Nirimation Community Presets"
-msgstr "Nirimation 社区预设"
+msgstr ""
 
 #: nirimod/pages/animations.py:956
 msgid "Niri Animation Collection"
-msgstr "Niri 动画集合"
+msgstr ""
 
 #: nirimod/pages/animations.py:1154
 msgid "Enabled"
-msgstr "已启用"
+msgstr ""
 
 #: nirimod/pages/animations.py:1165
 msgid "Duration (ms)"
-msgstr "时长 (毫秒)"
+msgstr ""
 
 #: nirimod/pages/animations.py:1197
 msgid "Easing Curve"
-msgstr "缓动曲线"
+msgstr ""
 
 #: nirimod/pages/animations.py:1197
-#, fuzzy
 msgid "Default"
-msgstr "系统默认"
+msgstr ""
 
 #: nirimod/pages/appearance.py:60
 msgid "Shadow"
-msgstr "阴影"
+msgstr ""
 
 #: nirimod/pages/appearance.py:63
 msgid "Enable Shadows"
-msgstr "启用阴影"
+msgstr ""
 
 #: nirimod/pages/appearance.py:75
 msgid "Softness (blur radius)"
-msgstr "柔和度 (模糊半径)"
+msgstr ""
 
 #: nirimod/pages/appearance.py:93
 msgid "Spread"
-msgstr "扩散"
+msgstr ""
 
 #: nirimod/pages/appearance.py:107 nirimod/pages/appearance.py:109
 msgid "Shadow Color"
-msgstr "阴影颜色"
+msgstr ""
 
 #: nirimod/pages/appearance.py:120
 msgid "Draw Behind Window"
-msgstr "绘制在窗口后"
+msgstr ""
 
 #: nirimod/pages/appearance.py:121
 msgid "Fixes corner artifacts with non-CSD apps"
-msgstr "修复非 CSD 应用的角落伪影"
+msgstr ""
 
 #: nirimod/pages/appearance.py:134
 msgid "Blur (Global)"
-msgstr "模糊 (全局)"
+msgstr ""
 
 #: nirimod/pages/appearance.py:143
 msgid "Enable Blur Effects"
-msgstr "启用模糊效果"
+msgstr ""
 
 #: nirimod/pages/appearance.py:144
 msgid "Controls the compositor-level blur { off } setting"
-msgstr "控制合成器级别的模糊 { off } 设置"
+msgstr ""
 
 #: nirimod/pages/appearance.py:154
 msgid "Force Blur on Windows"
-msgstr "强制窗口模糊"
+msgstr ""
 
 #: nirimod/pages/appearance.py:155
 msgid "Adds background-effect { blur true } to the global window rule"
-msgstr "向全局窗口规则添加 background-effect { blur true }"
+msgstr ""
 
 #: nirimod/pages/appearance.py:165
 msgid "Keep Focused Windows Blurred"
-msgstr "保持聚焦窗口模糊"
+msgstr ""
 
 #: nirimod/pages/appearance.py:166
 msgid "Adds a focused-window rule that forces blur on"
-msgstr "添加一个强制模糊的聚焦窗口规则"
+msgstr ""
 
 #: nirimod/pages/appearance.py:176
 msgid "Use Xray Wallpaper Blur"
-msgstr "使用 Xray 壁纸模糊"
+msgstr ""
 
 #: nirimod/pages/appearance.py:177
 msgid "Use wallpaper-only blur; disable for regular background blur"
-msgstr "仅使用壁纸模糊；禁用以使用常规背景模糊"
+msgstr ""
 
 #: nirimod/pages/appearance.py:191
 msgid "Window Opacity (1 = unset)"
-msgstr "窗口不透明度 (1 = 未设置)"
+msgstr ""
 
 #: nirimod/pages/appearance.py:206
 msgid "Draw Border With Background"
-msgstr "绘制带背景的边框"
+msgstr ""
 
 #: nirimod/pages/appearance.py:207
 msgid "Disable to avoid focus colors behind translucent windows"
-msgstr "禁用以避免半透明窗口后的聚焦颜色"
+msgstr ""
 
 #: nirimod/pages/appearance.py:220
 msgid "Passes"
-msgstr "遍数"
+msgstr ""
 
 #: nirimod/pages/appearance.py:237
 msgid "Offset"
-msgstr "偏移"
+msgstr ""
 
 #: nirimod/pages/appearance.py:254
 msgid "Noise"
-msgstr "噪点"
+msgstr ""
 
 #: nirimod/pages/appearance.py:274
 msgid "Saturation"
-msgstr "饱和度"
+msgstr ""
 
 #: nirimod/pages/appearance.py:290
 msgid "Window Geometry"
-msgstr "窗口几何"
+msgstr ""
 
 #: nirimod/pages/appearance.py:295
 msgid "Corner Radius (px)"
-msgstr "圆角半径 (像素)"
+msgstr ""
 
 #: nirimod/pages/appearance.py:317
 msgid "Enable"
-msgstr "启用"
+msgstr ""
 
 #: nirimod/pages/appearance.py:329
 msgid "Width (px)"
-msgstr "宽度 (像素)"
+msgstr ""
 
 #: nirimod/pages/base.py:33
-#, fuzzy
 msgid "Preferences"
-msgstr "NiriMod 首选项"
+msgstr ""
 
 #: nirimod/pages/base.py:34
 msgid "Restore Backup..."
-msgstr "恢复备份..."
+msgstr ""
 
 #: nirimod/pages/base.py:41
 msgid "Menu"
-msgstr "菜单"
+msgstr ""
 
 #: nirimod/pages/bindings.py:666
-#, fuzzy
 msgid "Edit Binding"
-msgstr "快捷键"
+msgstr ""
 
 #: nirimod/pages/bindings.py:682
 msgid "Key Combination"
-msgstr "按键组合"
+msgstr ""
 
 #: nirimod/pages/bindings.py:684
 msgid "Modifiers"
-msgstr "修饰键"
+msgstr ""
 
 #: nirimod/pages/bindings.py:698
 msgid "Key (e.g. T, F1, Return)"
-msgstr "按键 (例如 T, F1, Return)"
+msgstr ""
 
 #: nirimod/pages/bindings.py:705 nirimod/pages/bindings.py:707
-#, fuzzy
 msgid "Action"
-msgstr "动画"
+msgstr ""
 
 #: nirimod/pages/bindings.py:713
 msgid "Argument (for spawn, focus-workspace, etc.)"
-msgstr "参数 (用于 spawn, focus-workspace 等)"
+msgstr ""
 
 #: nirimod/pages/bindings.py:720 nirimod/pages/input_page.py:52
 msgid "Options"
-msgstr "选项"
+msgstr ""
 
 #: nirimod/pages/bindings.py:721
 msgid "Allow When Locked"
-msgstr "锁定时允许"
+msgstr ""
 
 #: nirimod/pages/bindings.py:725
 msgid "Repeat"
-msgstr "重复"
+msgstr ""
 
 #: nirimod/pages/environment.py:47
-#, fuzzy
 msgid "No Environment Variables"
-msgstr "环境变量"
+msgstr ""
 
 #: nirimod/pages/environment.py:48
 msgid "Variables set here will apply to niri and all processes it spawns."
-msgstr "此处设置的变量将应用于 niri 及其衍生的所有进程。"
+msgstr ""
 
 #: nirimod/pages/environment.py:52
 msgid "Add Variable"
-msgstr "添加变量"
+msgstr ""
 
 #: nirimod/pages/environment.py:67
 msgid "Environment Variables"
-msgstr "环境变量"
+msgstr ""
 
 #: nirimod/pages/environment.py:77
 msgid "Add Another Variable"
-msgstr "添加另一个变量"
+msgstr ""
 
 #: nirimod/pages/environment.py:94
 msgid "(empty)"
-msgstr "(空)"
+msgstr ""
 
 #: nirimod/pages/environment.py:128
-#, fuzzy
 msgid "Environment Variable"
-msgstr "环境变量"
+msgstr ""
 
 #: nirimod/pages/environment.py:128
 msgid "Set a key=value environment variable."
-msgstr "设置键值对环境变量。"
+msgstr ""
 
 #: nirimod/pages/environment.py:131
 msgid "Variable Name (e.g. QT_QPA_PLATFORM)"
-msgstr "变量名 (例如 QT_QPA_PLATFORM)"
+msgstr ""
 
 #: nirimod/pages/environment.py:132
 msgid "Value (e.g. wayland)"
-msgstr "值 (例如 wayland)"
+msgstr ""
 
 #: nirimod/pages/environment.py:144 nirimod/pages/startup.py:158
 msgid "Save"
-msgstr "保存"
+msgstr ""
 
 #: nirimod/pages/gestures.py:44
 msgid "Hot Corners"
-msgstr "热角"
+msgstr ""
 
 #: nirimod/pages/gestures.py:45
 msgid ""
@@ -725,416 +708,406 @@ msgstr ""
 
 #: nirimod/pages/gestures.py:61
 msgid "Enable Hot Corners"
-msgstr "启用热角"
+msgstr ""
 
 #: nirimod/pages/gestures.py:62
 msgid "Expand to choose which corners are active (default: top-left)"
-msgstr "展开以选择激活的角落 (默认: 左上)"
+msgstr ""
 
 #: nirimod/pages/gestures.py:97
 msgid "Hotkey Overlay"
-msgstr "快捷键覆盖层"
+msgstr ""
 
 #: nirimod/pages/gestures.py:104
-#, fuzzy
 msgid "Skip at Startup"
-msgstr "开机自启"
+msgstr ""
 
 #: nirimod/pages/gestures.py:105
-#, fuzzy
 msgid "Don't show the hotkey overlay when niri starts"
-msgstr "启动时不再显示"
+msgstr ""
 
 #: nirimod/pages/gestures.py:114
 msgid "Screenshots"
-msgstr "截图"
+msgstr ""
 
 #: nirimod/pages/gestures.py:114
 msgid "Path template for saved screenshots"
-msgstr "已保存截图的路径模板"
+msgstr ""
 
 #: nirimod/pages/gestures.py:120
 msgid "Save Path (strftime format)"
-msgstr "保存路径 (strftime 格式)"
+msgstr ""
 
 #: nirimod/pages/gestures.py:128
 msgid "Overview"
-msgstr "总览"
+msgstr ""
 
 #: nirimod/pages/gestures.py:136
 msgid "Workspace Shadow in Overview"
-msgstr "总览中的工作区阴影"
+msgstr ""
 
 #: nirimod/pages/gestures.py:137
 msgid "Show drop shadows under workspaces in overview mode"
-msgstr "在总览模式下显示工作区下的投影"
+msgstr ""
 
 #: nirimod/pages/input_page.py:41
 msgid "Keyboard"
-msgstr "键盘"
+msgstr ""
 
 #: nirimod/pages/input_page.py:41
 msgid "XKB options & key repeat"
-msgstr "XKB 选项与按键重复"
+msgstr ""
 
 #: nirimod/pages/input_page.py:50
 msgid "Variant"
-msgstr "变体"
+msgstr ""
 
 #: nirimod/pages/input_page.py:51
 msgid "Model"
-msgstr "型号"
+msgstr ""
 
 #: nirimod/pages/input_page.py:53
 msgid "Rules"
-msgstr "规则"
+msgstr ""
 
 #: nirimod/pages/input_page.py:74
 msgid "Repeat Delay (ms)"
-msgstr "重复延迟 (毫秒)"
+msgstr ""
 
 #: nirimod/pages/input_page.py:89
 msgid "Repeat Rate (keys/sec)"
-msgstr "重复速率 (键/秒)"
+msgstr ""
 
 #: nirimod/pages/input_page.py:97
 msgid "Enable Num Lock on Startup"
-msgstr "启动时启用数字锁定"
+msgstr ""
 
 #: nirimod/pages/input_page.py:108
 msgid "Pointer Behavior"
-msgstr "指针行为"
+msgstr ""
 
 #: nirimod/pages/input_page.py:111
 msgid "Focus Follows Mouse"
-msgstr "焦点跟随鼠标"
+msgstr ""
 
 #: nirimod/pages/input_page.py:138
 msgid "Max Scroll Amount (%)"
-msgstr "最大滚动量 (%)"
+msgstr ""
 
 #: nirimod/pages/input_page.py:139
 msgid "0% = only fully visible windows"
-msgstr "0% = 仅完全可见的窗口"
+msgstr ""
 
 #: nirimod/pages/input_page.py:157
 msgid "Warp Mouse to Focus"
-msgstr "鼠标跟随焦点"
+msgstr ""
 
 #: nirimod/pages/input_page.py:168
 msgid "Workspace Auto Back-and-Forth"
-msgstr "工作区自动来回切换"
+msgstr ""
 
 #: nirimod/pages/input_page.py:169
 msgid "Switching to current workspace switches back to previous"
-msgstr "切换到当前工作区会切回上一个"
+msgstr ""
 
 #: nirimod/pages/input_page.py:183
 msgid "Touchpad"
-msgstr "触控板"
+msgstr ""
 
 #: nirimod/pages/input_page.py:187
 msgid "No touchpad detected"
-msgstr "未检测到触控板"
+msgstr ""
 
 #: nirimod/pages/input_page.py:212
 msgid "Tap to Click"
-msgstr "轻触点击"
+msgstr ""
 
 #: nirimod/pages/input_page.py:213
 msgid "Disable While Typing"
-msgstr "输入时禁用"
+msgstr ""
 
 #: nirimod/pages/input_page.py:214
 msgid "Disable While Trackpointing"
-msgstr "使用小红点时禁用"
+msgstr ""
 
 #: nirimod/pages/input_page.py:215 nirimod/pages/input_page.py:282
 msgid "Natural Scroll"
-msgstr "自然滚动"
+msgstr ""
 
 #: nirimod/pages/input_page.py:216 nirimod/pages/input_page.py:290
 msgid "Left Handed"
-msgstr "左手模式"
+msgstr ""
 
 #: nirimod/pages/input_page.py:217 nirimod/pages/input_page.py:298
 msgid "Middle Click Emulation"
-msgstr "中键模拟"
+msgstr ""
 
 #: nirimod/pages/input_page.py:218
 msgid "Tap Drag"
-msgstr "轻触拖拽"
+msgstr ""
 
 #: nirimod/pages/input_page.py:219
 msgid "Tap Drag Lock"
-msgstr "轻触拖拽锁定"
+msgstr ""
 
 #: nirimod/pages/input_page.py:221
 msgid "Disable on External Mouse"
-msgstr "外接鼠标时禁用"
+msgstr ""
 
 #: nirimod/pages/input_page.py:230
 msgid "Accel Speed"
-msgstr "加速速度"
+msgstr ""
 
 #: nirimod/pages/input_page.py:237
-#, fuzzy
 msgid "Accel Profile"
-msgstr "已保存的配置方案"
+msgstr ""
 
 #: nirimod/pages/input_page.py:250
 msgid "Scroll Method"
-msgstr "滚动方式"
+msgstr ""
 
 #: nirimod/pages/input_page.py:263
 msgid "Click Method"
-msgstr "点击方式"
+msgstr ""
 
 #: nirimod/pages/input_page.py:278
 msgid "Mouse"
-msgstr "鼠标"
+msgstr ""
 
 #: nirimod/pages/input_page.py:352
 msgid "Scroll Button Code"
-msgstr "滚动按钮代码"
+msgstr ""
 
 #: nirimod/pages/input_page.py:353
 msgid "274 = middle click (used with 'on-button-down')"
-msgstr "274 = 中键 (配合 'on-button-down' 使用)"
+msgstr ""
 
 #: nirimod/pages/input_page.py:364
 msgid "Scroll Button Lock"
-msgstr "滚动按钮锁定"
+msgstr ""
 
 #: nirimod/pages/input_page.py:365
 msgid "Press once to toggle scrolling instead of holding"
-msgstr "单击切换滚动而非按住"
+msgstr ""
 
 #: nirimod/pages/input_page.py:381
 msgid "Trackpoint"
-msgstr "小红点"
+msgstr ""
 
 #: nirimod/pages/input_page.py:456
 msgid "Cursor"
-msgstr "光标"
+msgstr ""
 
 #: nirimod/pages/input_page.py:463
 msgid "Cursor Size (px)"
-msgstr "光标大小 (像素)"
+msgstr ""
 
 #: nirimod/pages/input_page.py:479
 msgid "Hide After Inactive (ms)"
-msgstr "不活动后隐藏 (毫秒)"
+msgstr ""
 
 #: nirimod/pages/input_page.py:480
 msgid "0 = never hide"
-msgstr "0 = 永不隐藏"
+msgstr ""
 
 #: nirimod/pages/input_page.py:493
 msgid "Cursor Theme (e.g. Adwaita)"
-msgstr "光标主题 (例如 Adwaita)"
+msgstr ""
 
 #: nirimod/pages/layout.py:43
 msgid "Window Gaps (px)"
-msgstr "窗口间距 (像素)"
+msgstr ""
 
 #: nirimod/pages/layout.py:57
 msgid "Center Focused Column"
-msgstr "居中聚焦列"
+msgstr ""
 
 #: nirimod/pages/layout.py:71
 msgid "Default Column Display"
-msgstr "默认列显示"
+msgstr ""
 
 #: nirimod/pages/layout.py:72
 msgid "How new columns open"
-msgstr "新列如何打开"
+msgstr ""
 
 #: nirimod/pages/layout.py:87
 msgid "Prefer No CSD"
-msgstr "优先无 CSD"
+msgstr ""
 
 #: nirimod/pages/layout.py:88
 msgid "Ask apps to omit client-side decorations"
-msgstr "请求应用省略客户端装饰"
+msgstr ""
 
 #: nirimod/pages/layout.py:99
 msgid "Background Color (e.g. transparent, #000000)"
-msgstr "背景颜色 (例如 transparent, #000000)"
+msgstr ""
 
 #: nirimod/pages/layout.py:111
 msgid "Default Column Width"
-msgstr "默认列宽"
+msgstr ""
 
 #: nirimod/pages/layout.py:127 nirimod/pages/layout.py:140
 msgid "Proportion"
-msgstr "比例"
+msgstr ""
 
 #: nirimod/pages/layout.py:127
 msgid "Fixed (px)"
-msgstr "固定 (像素)"
+msgstr ""
 
 #: nirimod/pages/layout.py:128
 msgid "Mode"
-msgstr "模式"
+msgstr ""
 
 #: nirimod/pages/layout.py:153
 msgid "Fixed Width (px)"
-msgstr "固定宽度 (像素)"
+msgstr ""
 
 #: nirimod/pages/layout.py:170
 msgid "Preset Column Widths (proportions)"
-msgstr "预设列宽 (比例)"
+msgstr ""
 
 #: nirimod/pages/layout.py:171
 msgid "Cycled through by Mod+R"
-msgstr "通过 Mod+R 循环切换"
+msgstr ""
 
 #: nirimod/pages/layout.py:182
 msgid "Add Preset"
-msgstr "添加预设"
+msgstr ""
 
 #: nirimod/pages/layout.py:188
 msgid "Struts (outer gaps, px)"
-msgstr "边框 (外部间距, 像素)"
+msgstr ""
 
 #: nirimod/pages/layout.py:195
 msgid "Left"
-msgstr "左"
+msgstr ""
 
 #: nirimod/pages/layout.py:196
 msgid "Right"
-msgstr "右"
+msgstr ""
 
 #: nirimod/pages/layout.py:197
 msgid "Top"
-msgstr "上"
+msgstr ""
 
 #: nirimod/pages/layout.py:198
 msgid "Bottom"
-msgstr "下"
+msgstr ""
 
 #: nirimod/pages/outputs.py:633
 msgid "Scale"
-msgstr "缩放"
+msgstr ""
 
 #: nirimod/pages/outputs.py:640
 msgid "Transform"
-msgstr "变换"
+msgstr ""
 
 #: nirimod/pages/outputs.py:662
 msgid "Position X"
-msgstr "位置 X"
+msgstr ""
 
 #: nirimod/pages/outputs.py:663
 msgid "Position Y"
-msgstr "位置 Y"
+msgstr ""
 
 #: nirimod/pages/startup.py:22 nirimod/pages/startup.py:70
 msgid "Startup Programs"
-msgstr "开机自启"
+msgstr ""
 
 #: nirimod/pages/startup.py:50
 msgid "No Startup Programs"
-msgstr "无启动程序"
+msgstr ""
 
 #: nirimod/pages/startup.py:51
 msgid "Programs added here will launch automatically when niri starts."
-msgstr "此处添加的程序将在 niri 启动时自动启动。"
+msgstr ""
 
 #: nirimod/pages/startup.py:55
 msgid "Add Program"
-msgstr "添加程序"
+msgstr ""
 
 #: nirimod/pages/startup.py:71
 #, python-brace-format
 msgid "{count} program{s} configured to launch"
-msgstr "{count} 个程序配置为启动"
+msgstr ""
 
 #: nirimod/pages/startup.py:80
 msgid "Add Another Program"
-msgstr "添加另一个程序"
+msgstr ""
 
 #: nirimod/pages/startup.py:108
 msgid "Remove startup entry"
-msgstr "移除启动项"
+msgstr ""
 
 #: nirimod/pages/startup.py:130
-#, fuzzy
 msgid "Startup Program"
-msgstr "开机自启"
+msgstr ""
 
 #: nirimod/pages/startup.py:130
 msgid "Enter the command to launch at startup."
-msgstr "输入启动时要运行的命令。"
+msgstr ""
 
 #: nirimod/pages/startup.py:132
 msgid "Command"
-msgstr "命令"
+msgstr ""
 
 #: nirimod/pages/startup.py:133
 msgid "Use shell (spawn-sh-at-startup)"
-msgstr "使用 Shell (spawn-sh-at-startup)"
+msgstr ""
 
 #: nirimod/pages/startup.py:138
 msgid "Delay"
-msgstr "延迟"
+msgstr ""
 
 #: nirimod/pages/startup.py:139
 msgid "Seconds to wait before launching"
-msgstr "启动前等待的秒数"
+msgstr ""
 
 #: nirimod/pages/window_rules.py:358 nirimod/pages/window_rules.py:1017
 msgid "Layer Rules"
-msgstr "图层规则"
+msgstr ""
 
 #: nirimod/pages/window_rules.py:1084
 msgid "Match"
-msgstr "匹配"
+msgstr ""
 
 #: nirimod/pages/window_rules.py:1093
-#, fuzzy
 msgid "Actions"
-msgstr "动画"
+msgstr ""
 
 #: nirimod/pages/workspaces.py:31 nirimod/pages/workspaces.py:55
 msgid "Named Workspaces"
-msgstr "工作区管理"
+msgstr ""
 
 #: nirimod/pages/workspaces.py:32
 msgid "Named workspaces open immediately at niri startup"
-msgstr "命名工作区在 niri 启动时立即打开"
+msgstr ""
 
 #: nirimod/pages/workspaces.py:55
-#, fuzzy, python-brace-format
+#, python-brace-format
 msgid "{count} workspace(s)"
-msgstr "工作区管理"
+msgstr ""
 
 #: nirimod/pages/workspaces.py:74
 msgid "Name"
-msgstr "名称"
+msgstr ""
 
 #: nirimod/pages/workspaces.py:80
 msgid "Open on Output"
-msgstr "在输出设备上打开"
+msgstr ""
 
 #: nirimod/pages/workspaces.py:104
-#, fuzzy
 msgid "Add Workspace"
-msgstr "工作区"
+msgstr ""
 
 #: nirimod/pages/workspaces.py:104
 msgid "Enter a name for the new workspace."
-msgstr "为新工作区输入名称。"
+msgstr ""
 
 #: nirimod/pages/workspaces.py:106
-#, fuzzy
 msgid "Workspace Name"
-msgstr "工作区"
+msgstr ""
 
 #: nirimod/pages/workspaces.py:111
 msgid "Add"
-msgstr "添加"
-
-#~ msgid "Taken on first launch"
-#~ msgstr "首次启动时创建"
+msgstr ""

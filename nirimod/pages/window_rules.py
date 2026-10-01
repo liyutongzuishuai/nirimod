@@ -10,6 +10,7 @@ gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 from gi.repository import Adw, Gtk, GLib
 
+from nirimod import app_settings
 from nirimod.column_display import (
     COLUMN_DISPLAY_RULE_LABELS,
     column_display_rule_index,
@@ -18,6 +19,8 @@ from nirimod.column_display import (
 )
 from nirimod.kdl_parser import KdlNode, KdlRawString
 from nirimod.pages.base import BasePage
+
+_ = app_settings._
 
 
 # human-readable labels
@@ -348,11 +351,11 @@ class WindowRulesPage(BasePage):
         add_layer_btn.connect("clicked", self._on_add_layer)
         header.pack_end(add_layer_btn)
 
-        self._rules_grp = Adw.PreferencesGroup(title="Window Rules")
+        self._rules_grp = Adw.PreferencesGroup(title=_("Window Rules"))
         content.append(self._rules_grp)
 
         self._layer_rules_grp = Adw.PreferencesGroup(
-            title="Layer Rules",
+            title=_("Layer Rules"),
             description="Rules for layer-shell surfaces (bars, overlays, wallpapers…)",
         )
         content.append(self._layer_rules_grp)
@@ -375,7 +378,7 @@ class WindowRulesPage(BasePage):
             return
         rules = self._get_rules()
         new_grp = Adw.PreferencesGroup(
-            title="Window Rules",
+            title=_("Window Rules"),
             description=f"{len(rules)} rule(s) — click a row to edit",
         )
         for i, rule in enumerate(rules):
@@ -1011,7 +1014,7 @@ class WindowRulesPage(BasePage):
             return
         rules = self._get_layer_rules()
         new_grp = Adw.PreferencesGroup(
-            title="Layer Rules",
+            title=_("Layer Rules"),
             description=f"{len(rules)} rule(s) — bars, overlays, wallpapers",
         )
         for i, rule in enumerate(rules):
@@ -1078,7 +1081,7 @@ class WindowRulesPage(BasePage):
 
         prefs = Adw.PreferencesPage()
 
-        match_grp = Adw.PreferencesGroup(title="Match")
+        match_grp = Adw.PreferencesGroup(title=_("Match"))
         match_node = rule.get_child("match") if rule else None
         ns_entry = Adw.EntryRow(title="Namespace (regex, e.g. ^waybar$)")
         ns_entry.set_text(
@@ -1087,7 +1090,7 @@ class WindowRulesPage(BasePage):
         match_grp.add(ns_entry)
         prefs.add(match_grp)
 
-        act_grp = Adw.PreferencesGroup(title="Actions")
+        act_grp = Adw.PreferencesGroup(title=_("Actions"))
         bool_rows: dict[str, Adw.SwitchRow] = {}
         for key, label in LAYER_BOOL_ACTION_LABELS.items():
             sr = Adw.SwitchRow(title=label)

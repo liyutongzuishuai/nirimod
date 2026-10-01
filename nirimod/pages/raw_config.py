@@ -11,9 +11,12 @@ from gi.repository import Gtk, Pango, GLib
 
 from pathlib import Path
 
+from nirimod import app_settings
 from nirimod import niri_ipc
 from nirimod.kdl_parser import NIRI_CONFIG, replace_config_file
 from nirimod.pages.base import BasePage
+
+_ = app_settings._
 
 
 class RawConfigPage(BasePage):

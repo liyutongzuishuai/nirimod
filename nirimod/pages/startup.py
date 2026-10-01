@@ -9,14 +9,17 @@ gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 from gi.repository import Adw, Gtk, GLib
 
+from nirimod import app_settings
 from nirimod.kdl_parser import KdlNode
 from nirimod.pages.base import BasePage
+
+_ = app_settings._
 from nirimod.startup_entries import make_startup_node, startup_values_from_node
 
 
 class StartupPage(BasePage):
     def build(self) -> Gtk.Widget:
-        tb, header, _, content = self._make_toolbar_page("Startup Programs")
+        tb, header, _, content = self._make_toolbar_page(_("Startup Programs"))
         self._content = content
 
         self.refresh()
@@ -44,12 +47,12 @@ class StartupPage(BasePage):
 
         if not entries:
             status = Adw.StatusPage(
-                title="No Startup Programs",
-                description="Programs added here will launch automatically when niri starts.",
+                title=_("No Startup Programs"),
+                description=_("Programs added here will launch automatically when niri starts."),
                 icon_name="applications-system-symbolic",
             )
 
-            add_btn = Gtk.Button(label="Add Program")
+            add_btn = Gtk.Button(label=_("Add Program"))
             add_btn.add_css_class("pill")
             add_btn.add_css_class("suggested-action")
             add_btn.set_halign(Gtk.Align.CENTER)
@@ -64,8 +67,8 @@ class StartupPage(BasePage):
             self._content.append(box)
         else:
             grp = Adw.PreferencesGroup(
-                title="Startup Programs",
-                description=f"{len(entries)} program{'s' if len(entries) != 1 else ''} configured to launch",
+                title=_("Startup Programs"),
+                description=_("{count} program{s} configured to launch").format(count=len(entries), s="s" if len(entries) != 1 else ""),
             )
             for i, entry in enumerate(entries):
                 row = self._make_row(entry, i)
@@ -74,7 +77,7 @@ class StartupPage(BasePage):
             self._content.append(grp)
 
             # Also add a convenient button at the bottom
-            add_btn = Gtk.Button(label="Add Another Program")
+            add_btn = Gtk.Button(label=_("Add Another Program"))
             add_btn.add_css_class("pill")
             add_btn.set_halign(Gtk.Align.CENTER)
             add_btn.set_margin_top(16)
@@ -102,7 +105,7 @@ class StartupPage(BasePage):
         del_btn.set_valign(Gtk.Align.CENTER)
         del_btn.add_css_class("flat")
         del_btn.add_css_class("error")
-        del_btn.set_tooltip_text("Remove startup entry")
+        del_btn.set_tooltip_text(_("Remove startup entry"))
         del_btn.connect("clicked", lambda *_, i=idx: self._on_delete(i))
         row.add_suffix(del_btn)
         return row
@@ -124,16 +127,16 @@ class StartupPage(BasePage):
 
     def _show_dialog(self, node: KdlNode | None, idx: int):
         dialog = Adw.AlertDialog(
-            heading="Startup Program", body="Enter the command to launch at startup."
+            heading=_("Startup Program"), body=_("Enter the command to launch at startup.")
         )
-        cmd_entry = Adw.EntryRow(title="Command")
-        sh_switch = Adw.SwitchRow(title="Use shell (spawn-sh-at-startup)")
+        cmd_entry = Adw.EntryRow(title=_("Command"))
+        sh_switch = Adw.SwitchRow(title=_("Use shell (spawn-sh-at-startup)"))
         delay_adj = Gtk.Adjustment(
             value=0, lower=0, upper=3600, step_increment=1, page_increment=10
         )
         delay_row = Adw.SpinRow(
-            title="Delay",
-            subtitle="Seconds to wait before launching",
+            title=_("Delay"),
+            subtitle=_("Seconds to wait before launching"),
             adjustment=delay_adj,
             digits=0,
         )
@@ -151,8 +154,8 @@ class StartupPage(BasePage):
         box.append(grp)
         dialog.set_extra_child(box)
 
-        dialog.add_response("cancel", "Cancel")
-        dialog.add_response("save", "Save")
+        dialog.add_response("cancel", _("Cancel"))
+        dialog.add_response("save", _("Save"))
         dialog.set_response_appearance("save", Adw.ResponseAppearance.SUGGESTED)
 
         def _on_resp(d, r):

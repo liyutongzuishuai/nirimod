@@ -13,9 +13,12 @@ gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 from gi.repository import Adw, Gio, GLib, Gtk
 
+from nirimod import app_settings
 from nirimod.kdl_parser import KdlNode
 from nirimod.pages.base import BasePage
 from nirimod.widgets import KeyboardVisualizer, normalize_key_id
+
+_ = app_settings._
 
 
 MODIFIERS = ["Mod", "Super", "Ctrl", "Alt", "Shift"]
@@ -660,7 +663,7 @@ class BindingsPage(BasePage):
             self._show_bind_dialog(self._binds[idx], idx)
 
     def _show_bind_dialog(self, bind: dict | None, idx: int):
-        dialog = Adw.Dialog(title="Edit Binding" if bind else "Add Binding")
+        dialog = Adw.Dialog(title=_("Edit Binding" if bind else "Add Binding"))
         dialog.set_content_width(440)
 
         box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=0)
@@ -676,9 +679,9 @@ class BindingsPage(BasePage):
         prefs.set_vexpand(True)
 
         # Keysym group
-        keys_grp = Adw.PreferencesGroup(title="Key Combination")
+        keys_grp = Adw.PreferencesGroup(title=_("Key Combination"))
 
-        mod_row = Adw.ActionRow(title="Modifiers")
+        mod_row = Adw.ActionRow(title=_("Modifiers"))
         mod_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=6)
         mod_box.set_valign(Gtk.Align.CENTER)
         mod_checks: dict[str, Gtk.CheckButton] = {}
@@ -692,34 +695,34 @@ class BindingsPage(BasePage):
         mod_row.add_suffix(mod_box)
         keys_grp.add(mod_row)
 
-        key_entry = Adw.EntryRow(title="Key (e.g. T, F1, Return)")
+        key_entry = Adw.EntryRow(title=_("Key (e.g. T, F1, Return)"))
         bare = cur_keysym.split("+")[-1] if bind else ""
         key_entry.set_text(bare)
         keys_grp.add(key_entry)
         prefs.add(keys_grp)
 
         # Action group
-        act_grp = Adw.PreferencesGroup(title="Action")
+        act_grp = Adw.PreferencesGroup(title=_("Action"))
         act_model = Gtk.StringList.new(NIRI_ACTIONS)
-        act_combo = Adw.ComboRow(title="Action", model=act_model)
+        act_combo = Adw.ComboRow(title=_("Action"), model=act_model)
         cur_action = bind["action"] if bind else ""
         if cur_action in NIRI_ACTIONS:
             act_combo.set_selected(NIRI_ACTIONS.index(cur_action))
         act_grp.add(act_combo)
 
-        arg_row = Adw.EntryRow(title="Argument (for spawn, focus-workspace, etc.)")
+        arg_row = Adw.EntryRow(title=_("Argument (for spawn, focus-workspace, etc.)"))
         cur_args = (bind.get("action_args") or []) if bind else []
         arg_row.set_text(" ".join(str(a) for a in cur_args) if cur_args else "")
         act_grp.add(arg_row)
         prefs.add(act_grp)
 
         # Options
-        opt_grp = Adw.PreferencesGroup(title="Options")
-        locked_row = Adw.SwitchRow(title="Allow When Locked")
+        opt_grp = Adw.PreferencesGroup(title=_("Options"))
+        locked_row = Adw.SwitchRow(title=_("Allow When Locked"))
         locked_row.set_active(bind["allow_when_locked"] if bind else False)
         opt_grp.add(locked_row)
 
-        repeat_row = Adw.SwitchRow(title="Repeat")
+        repeat_row = Adw.SwitchRow(title=_("Repeat"))
         repeat_row.set_active(bind["repeat"] if bind else True)
         opt_grp.add(repeat_row)
         prefs.add(opt_grp)

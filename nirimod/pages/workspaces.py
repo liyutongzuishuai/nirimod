@@ -9,14 +9,17 @@ gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 from gi.repository import Adw, Gtk
 
+from nirimod import app_settings
 from nirimod.kdl_parser import KdlNode, set_child_arg
 from nirimod import niri_ipc
 from nirimod.pages.base import BasePage
 
+_ = app_settings._
+
 
 class WorkspacesPage(BasePage):
     def build(self) -> Gtk.Widget:
-        tb, header, _, content = self._make_toolbar_page("Workspaces")
+        tb, header, _, content = self._make_toolbar_page(_("Workspaces"))
         self._content = content
 
         add_btn = Gtk.Button(icon_name="list-add-symbolic")
@@ -25,8 +28,8 @@ class WorkspacesPage(BasePage):
         header.pack_end(add_btn)
 
         self._grp = Adw.PreferencesGroup(
-            title="Named Workspaces",
-            description="Named workspaces open immediately at niri startup",
+            title=_("Named Workspaces"),
+            description=_("Named workspaces open immediately at niri startup"),
         )
         content.append(self._grp)
         self.refresh()
@@ -49,7 +52,7 @@ class WorkspacesPage(BasePage):
             output_model = Gtk.StringList.new(["(any)"] + outputs)
 
             new_grp = Adw.PreferencesGroup(
-                title="Named Workspaces", description=f"{len(ws_nodes)} workspace(s)"
+                title=_("Named Workspaces"), description=_("{count} workspace(s)").format(count=len(ws_nodes))
             )
             for i, ws in enumerate(ws_nodes):
                 row = self._make_ws_row(ws, i, outputs, output_model)
@@ -68,13 +71,13 @@ class WorkspacesPage(BasePage):
 
         exp = Adw.ExpanderRow(title=name)
 
-        name_row = Adw.EntryRow(title="Name")
+        name_row = Adw.EntryRow(title=_("Name"))
         name_row.set_text(str(name))
         name_row.set_show_apply_button(True)
         name_row.connect("apply", lambda r, i=idx: self._rename_ws(i, r.get_text()))
         exp.add_row(name_row)
 
-        out_row = Adw.ComboRow(title="Open on Output")
+        out_row = Adw.ComboRow(title=_("Open on Output"))
         out_list = ["(any)"] + outputs
         out_row.set_model(Gtk.StringList.new(out_list))
         if assigned_out in outputs:
@@ -98,14 +101,14 @@ class WorkspacesPage(BasePage):
 
     def _on_add(self, *_):
         dialog = Adw.AlertDialog(
-            heading="Add Workspace", body="Enter a name for the new workspace."
+            heading=_("Add Workspace"), body=_("Enter a name for the new workspace.")
         )
-        entry = Adw.EntryRow(title="Workspace Name")
+        entry = Adw.EntryRow(title=_("Workspace Name"))
         grp = Adw.PreferencesGroup()
         grp.add(entry)
         dialog.set_extra_child(grp)
-        dialog.add_response("cancel", "Cancel")
-        dialog.add_response("add", "Add")
+        dialog.add_response("cancel", _("Cancel"))
+        dialog.add_response("add", _("Add"))
         dialog.set_response_appearance("add", Adw.ResponseAppearance.SUGGESTED)
 
         def _on_resp(d, r):

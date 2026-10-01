@@ -13,9 +13,12 @@ gi.require_version("Adw", "1")
 
 from gi.repository import Adw, Gtk
 
+from nirimod import app_settings
 from nirimod import niri_ipc
 from nirimod.kdl_parser import KdlNode, set_child_arg, safe_switch_connect
 from nirimod.pages.base import BasePage
+
+_ = app_settings._
 
 if TYPE_CHECKING:
     from nirimod.window import NiriModWindow
@@ -627,14 +630,14 @@ class OutputsPage(BasePage):
             upper=100.0,
             step_increment=0.05,
         )
-        scale_row = Adw.SpinRow(title="Scale", adjustment=scale_adj, digits=2)
+        scale_row = Adw.SpinRow(title=_("Scale"), adjustment=scale_adj, digits=2)
         scale_row.connect(
             "notify::value",
             lambda r, _: self._set_output_prop(name, "scale", r.get_value()),
         )
 
         t_model = Gtk.StringList.new(TRANSFORMS)
-        transform_row = Adw.ComboRow(title="Transform", model=t_model)
+        transform_row = Adw.ComboRow(title=_("Transform"), model=t_model)
         cur_t = (output.get("logical") or {}).get("transform", "normal")
         cur_t_norm = str(cur_t).lower().replace("_", "-") if cur_t else "normal"
         if cur_t_norm in TRANSFORMS:
@@ -656,8 +659,8 @@ class OutputsPage(BasePage):
         )
         self._pos_x_adj = px_adj
         self._pos_y_adj = py_adj
-        pos_x_row = Adw.SpinRow(title="Position X", adjustment=px_adj, digits=0)
-        pos_y_row = Adw.SpinRow(title="Position Y", adjustment=py_adj, digits=0)
+        pos_x_row = Adw.SpinRow(title=_("Position X"), adjustment=px_adj, digits=0)
+        pos_y_row = Adw.SpinRow(title=_("Position Y"), adjustment=py_adj, digits=0)
         pos_x_row.connect(
             "notify::value",
             lambda r, _: self._set_output_pos(

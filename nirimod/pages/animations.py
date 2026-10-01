@@ -18,6 +18,7 @@ gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 from gi.repository import Adw, GLib, Gtk
 
+from nirimod import app_settings
 from nirimod.kdl_parser import (
     KdlNode,
     find_or_create,
@@ -26,6 +27,8 @@ from nirimod.kdl_parser import (
     set_node_flag,
 )
 from nirimod.pages.base import BasePage
+
+_ = app_settings._
 
 _NIRIMATION_API = "https://api.github.com/repos/XansiVA/nirimation/contents/animations"
 _NIRIMATION_RAW = (
@@ -488,8 +491,8 @@ class AnimationsPage(BasePage):
         self._custom_switch_grp = Adw.PreferencesGroup()
         self._custom_switch_grp.set_hexpand(True)
         self._custom_switch_row = Adw.ActionRow(
-            title="Community Preset Active",
-            subtitle="You are currently using a preset. Switch back to use your custom animation settings.",
+            title=_("Community Preset Active"),
+            subtitle=_("You are currently using a preset. Switch back to use your custom animation settings."),
         )
         self._custom_switch_row.add_css_class("property")
         self._custom_switch_row.set_icon_name("emblem-important-symbolic")
@@ -507,13 +510,13 @@ class AnimationsPage(BasePage):
 
         # ── Global Settings ──────────────────────────────────────────────────
         off_grp = Adw.PreferencesGroup(
-            title="Global Settings",
+            title=_("Global Settings"),
             description="These apply to all animations universally.",
         )
         off_grp.set_hexpand(True)
         off_row = Adw.SwitchRow(
-            title="Enable Animations",
-            subtitle="Toggle all desktop animations on or off",
+            title=_("Enable Animations"),
+            subtitle=_("Toggle all desktop animations on or off"),
         )
         off_row.set_icon_name("media-playback-start-symbolic")
         off_row.set_active(anim_node.get_child("off") is None)
@@ -527,8 +530,8 @@ class AnimationsPage(BasePage):
             value=slowdown_val, lower=0.1, upper=10.0, step_increment=0.1
         )
         slowdown_row = Adw.SpinRow(
-            title="Global Slowdown Factor",
-            subtitle="Multiply all animation durations by this factor",
+            title=_("Global Slowdown Factor"),
+            subtitle=_("Multiply all animation durations by this factor"),
             adjustment=slowdown_adj,
             digits=1,
         )
@@ -547,7 +550,7 @@ class AnimationsPage(BasePage):
 
         # ── Easing Curve Editor ──────────────────────────────────────────────
         bezier_grp = Adw.PreferencesGroup(
-            title="Easing Curve Editor",
+            title=_("Easing Curve Editor"),
             description="Design a custom easing curve to apply to any animation below.",
         )
         bezier_grp.set_hexpand(True)
@@ -601,7 +604,7 @@ class AnimationsPage(BasePage):
 
         # ── Per-animation groups ─────────────────────────────────────────────
         for group_title, anims in ANIM_GROUPS:
-            grp = Adw.PreferencesGroup(title=group_title)
+            grp = Adw.PreferencesGroup(title=_(group_title))
             grp.set_hexpand(True)
             for anim_key, anim_label, icon_name in anims:
                 row = self._build_anim_row(anim_key, anim_label, icon_name, anim_node)
@@ -681,7 +684,7 @@ class AnimationsPage(BasePage):
         entries = self._list_local_presets()
 
         grp = Adw.PreferencesGroup(
-            title="Downloaded Presets",
+            title=_("Downloaded Presets"),
             description="Locally saved presets — apply these without an internet connection.",
         )
         grp.set_hexpand(True)
@@ -690,8 +693,8 @@ class AnimationsPage(BasePage):
 
         if not entries:
             empty_row = Adw.ActionRow(
-                title="No presets downloaded yet",
-                subtitle="Use the download button (\u2193) next to any online preset below.",
+                title=_("No presets downloaded yet"),
+                subtitle=_("Use the download button (\u2193) next to any online preset below."),
             )
             empty_row.add_prefix(
                 Gtk.Image.new_from_icon_name("folder-download-symbolic")
@@ -864,14 +867,14 @@ class AnimationsPage(BasePage):
         refresh_btn.add_css_class("circular")
         header_btns.append(refresh_btn)
 
-        grp = Adw.PreferencesGroup(title=title, description=description)
+        grp = Adw.PreferencesGroup(title=_(title), description=_(description))
         grp.set_header_suffix(header_btns)
 
         spinner = Gtk.Spinner()
         spinner.start()
         spinner.set_margin_top(8)
         spinner.set_margin_bottom(8)
-        spinner_row = Adw.ActionRow(title="Fetching presets…")
+        spinner_row = Adw.ActionRow(title=_("Fetching presets…"))
         spinner_row.add_prefix(spinner)
         grp.add(spinner_row)
 
@@ -883,7 +886,7 @@ class AnimationsPage(BasePage):
             spinner.stop()
             if isinstance(result, Exception):
                 err_row = Adw.ActionRow(
-                    title="Unable to fetch presets",
+                    title=_("Unable to fetch presets"),
                     subtitle=str(result),
                 )
                 err_row.add_prefix(
@@ -906,7 +909,7 @@ class AnimationsPage(BasePage):
             sp2.start()
             sp2.set_margin_top(8)
             sp2.set_margin_bottom(8)
-            wait_row = Adw.ActionRow(title="Fetching presets…")
+            wait_row = Adw.ActionRow(title=_("Fetching presets…"))
             wait_row.add_prefix(sp2)
             grp.add(wait_row)
 
@@ -915,7 +918,7 @@ class AnimationsPage(BasePage):
                 sp2.stop()
                 if isinstance(result, Exception):
                     err_row = Adw.ActionRow(
-                        title="Unable to fetch presets",
+                        title=_("Unable to fetch presets"),
                         subtitle=str(result),
                     )
                     err_row.add_prefix(
@@ -938,7 +941,7 @@ class AnimationsPage(BasePage):
     def _build_nirimation_group(self) -> Adw.PreferencesGroup:
         """Build the XansiVA/nirimation presets section."""
         return self._build_preset_group(
-            title="Nirimation Community Presets",
+            title=_("Nirimation Community Presets"),
             description="GLSL shader animations from XansiVA/nirimation — replaces your current animations block.",
             fetch_fn=_fetch_nirimation_presets,
             bust_cache_attr="_nirimation_cache",
@@ -950,7 +953,7 @@ class AnimationsPage(BasePage):
     def _build_jgarza_group(self) -> Adw.PreferencesGroup:
         """Build the jgarza9788/niri-animation-collection presets section."""
         return self._build_preset_group(
-            title="Niri Animation Collection",
+            title=_("Niri Animation Collection"),
             description="Community GLSL shader presets from jgarza9788/niri-animation-collection — replaces your current animations block.",
             fetch_fn=_fetch_jgarza_presets,
             bust_cache_attr="_jgarza_cache",
@@ -1148,7 +1151,7 @@ class AnimationsPage(BasePage):
         grp.add_css_class("nm-expander")
         an = anim_node.get_child(key)
 
-        enabled_row = Adw.SwitchRow(title="Enabled")
+        enabled_row = Adw.SwitchRow(title=_("Enabled"))
         enabled_row.set_active(an is not None and an.get_child("off") is None)
         enabled_row.connect(
             "notify::active",
@@ -1159,7 +1162,7 @@ class AnimationsPage(BasePage):
         duration = an.child_arg("duration-ms") if an else 250
         dur_val = int(duration) if duration else 250
         dur_adj = Gtk.Adjustment(value=dur_val, lower=10, upper=2000, step_increment=10)
-        dur_row = Adw.SpinRow(title="Duration (ms)", adjustment=dur_adj, digits=0)
+        dur_row = Adw.SpinRow(title=_("Duration (ms)"), adjustment=dur_adj, digits=0)
 
         dur_row._last_val = dur_val
 
@@ -1191,7 +1194,7 @@ class AnimationsPage(BasePage):
             current_curve = str(easing.args[0])
 
         apply_row = Adw.ActionRow(
-            title="Easing Curve", subtitle=current_curve if current_curve else "Default"
+            title=_("Easing Curve"), subtitle=_(current_curve if current_curve else "Default")
         )
         apply_btn.connect(
             "clicked", lambda *_, k=key, ar=apply_row: self._apply_bezier_to_anim(k, ar)
