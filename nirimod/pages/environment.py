@@ -9,13 +9,16 @@ gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 from gi.repository import Adw, GLib, Gtk
 
+from nirimod import app_settings
 from nirimod.kdl_parser import KdlNode, find_or_create
 from nirimod.pages.base import BasePage
+
+_ = app_settings._
 
 
 class EnvironmentPage(BasePage):
     def build(self) -> Gtk.Widget:
-        tb, header, _, content = self._make_toolbar_page("Environment")
+        tb, header, _, content = self._make_toolbar_page(_("Environment"))
         self._content = content
 
         # Add button has been moved to the page body for better visibility
@@ -41,12 +44,12 @@ class EnvironmentPage(BasePage):
 
         if not entries:
             status = Adw.StatusPage(
-                title="No Environment Variables",
-                description="Variables set here will apply to niri and all processes it spawns.",
+                title=_("No Environment Variables"),
+                description=_("Variables set here will apply to niri and all processes it spawns."),
                 icon_name="preferences-system-symbolic",
             )
 
-            add_btn = Gtk.Button(label="Add Variable")
+            add_btn = Gtk.Button(label=_("Add Variable"))
             add_btn.add_css_class("pill")
             add_btn.add_css_class("suggested-action")
             add_btn.set_halign(Gtk.Align.CENTER)
@@ -61,7 +64,7 @@ class EnvironmentPage(BasePage):
             self._content.append(box)
         else:
             grp = Adw.PreferencesGroup(
-                title="Environment Variables",
+                title=_("Environment Variables"),
                 description=f"{len(entries)} variable{'s' if len(entries) != 1 else ''} configured",
             )
             for i, child in enumerate(entries):
@@ -71,7 +74,7 @@ class EnvironmentPage(BasePage):
             self._content.append(grp)
 
             # Convenient button at the bottom
-            add_btn = Gtk.Button(label="Add Another Variable")
+            add_btn = Gtk.Button(label=_("Add Another Variable"))
             add_btn.add_css_class("pill")
             add_btn.set_halign(Gtk.Align.CENTER)
             add_btn.set_margin_top(16)
@@ -88,7 +91,7 @@ class EnvironmentPage(BasePage):
 
         row = Adw.ActionRow(
             title=f"<b>{key_str}</b>",
-            subtitle=val_str if val_str else "(empty)",
+            subtitle=val_str if val_str else _("(empty)"),
         )
         row.set_use_markup(True)
         edit_btn = Gtk.Button(icon_name="document-edit-symbolic")
@@ -122,11 +125,11 @@ class EnvironmentPage(BasePage):
 
     def _show_dialog(self, node: KdlNode | None, idx: int):
         dialog = Adw.AlertDialog(
-            heading="Environment Variable", body="Set a key=value environment variable."
+            heading=_("Environment Variable"), body=_("Set a key=value environment variable.")
         )
 
-        key_entry = Adw.EntryRow(title="Variable Name (e.g. QT_QPA_PLATFORM)")
-        val_entry = Adw.EntryRow(title="Value (e.g. wayland)")
+        key_entry = Adw.EntryRow(title=_("Variable Name (e.g. QT_QPA_PLATFORM)"))
+        val_entry = Adw.EntryRow(title=_("Value (e.g. wayland)"))
         if node:
             key_entry.set_text(node.name)
             key_entry.set_editable(False)  # editing key means replacing the node
@@ -137,8 +140,8 @@ class EnvironmentPage(BasePage):
         grp.add(val_entry)
         dialog.set_extra_child(grp)
 
-        dialog.add_response("cancel", "Cancel")
-        dialog.add_response("save", "Save")
+        dialog.add_response("cancel", _("Cancel"))
+        dialog.add_response("save", _("Save"))
         dialog.set_response_appearance("save", Adw.ResponseAppearance.SUGGESTED)
 
         def _on_resp(d, r):

@@ -15,7 +15,10 @@ from nirimod.kdl_parser import (
     set_node_flag,
     safe_switch_connect,
 )
+from nirimod import app_settings
 from nirimod.pages.base import BasePage
+
+_ = app_settings._
 
 _CORNERS = [
     ("top-left", "Top-Left", "Moves cursor to the top-left corner"),
@@ -27,7 +30,7 @@ _CORNERS = [
 
 class GesturesPage(BasePage):
     def build(self) -> Gtk.Widget:
-        tb, _, _, content = self._make_toolbar_page("Gestures & Misc")
+        tb, _, _, content = self._make_toolbar_page(_("Gestures & Misc"))
         self._content = content
         self._build_content()
         return tb
@@ -38,8 +41,8 @@ class GesturesPage(BasePage):
 
         # ── Hot Corners ───────────────────────────────────────────────────────
         hc_grp = Adw.PreferencesGroup(
-            title="Hot Corners",
-            description="Trigger the overview when the cursor touches a screen corner (niri ≥ 25.05)",
+            title=_("Hot Corners"),
+            description=_("Trigger the overview when the cursor touches a screen corner (niri ≥ 25.05)"),
         )
         gestures_node = next((n for n in nodes if n.name == "gestures"), None)
         hc_node = gestures_node.get_child("hot-corners") if gestures_node else None
@@ -55,8 +58,8 @@ class GesturesPage(BasePage):
 
         # ExpanderRow = the enable/disable switch + collapsible corner list
         hc_expander = Adw.ExpanderRow(
-            title="Enable Hot Corners",
-            subtitle="Expand to choose which corners are active (default: top-left)",
+            title=_("Enable Hot Corners"),
+            subtitle=_("Expand to choose which corners are active (default: top-left)"),
         )
         hc_expander.set_expanded(hc_enabled)
         hc_expander.set_show_enable_switch(True)
@@ -91,15 +94,15 @@ class GesturesPage(BasePage):
         content.append(hc_grp)
 
         # ── Hotkey Overlay ────────────────────────────────────────────────────
-        hko_grp = Adw.PreferencesGroup(title="Hotkey Overlay")
+        hko_grp = Adw.PreferencesGroup(title=_("Hotkey Overlay"))
         hko_node = next((n for n in nodes if n.name == "hotkey-overlay"), None)
 
         skip_initial = (
             hko_node is not None and hko_node.get_child("skip-at-startup") is not None
         )
         skip_row = Adw.SwitchRow(
-            title="Skip at Startup",
-            subtitle="Don't show the hotkey overlay when niri starts",
+            title=_("Skip at Startup"),
+            subtitle=_("Don't show the hotkey overlay when niri starts"),
         )
         skip_row.set_active(skip_initial)
         safe_switch_connect(skip_row, skip_initial, self._set_skip_hotkey_overlay)
@@ -108,13 +111,13 @@ class GesturesPage(BasePage):
 
         # ── Screenshots ───────────────────────────────────────────────────────
         ss_grp = Adw.PreferencesGroup(
-            title="Screenshots", description="Path template for saved screenshots"
+            title=_("Screenshots"), description=_("Path template for saved screenshots")
         )
         cur_path = next(
             (n.args[0] for n in nodes if n.name == "screenshot-path" and n.args),
             "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png",
         )
-        path_row = Adw.EntryRow(title="Save Path (strftime format)")
+        path_row = Adw.EntryRow(title=_("Save Path (strftime format)"))
         path_row.set_text(str(cur_path))
         path_row.set_show_apply_button(True)
         path_row.connect("apply", lambda r: self._set_screenshot_path(r.get_text()))
@@ -122,7 +125,7 @@ class GesturesPage(BasePage):
         content.append(ss_grp)
 
         # ── Overview ──────────────────────────────────────────────────────────
-        ov_grp = Adw.PreferencesGroup(title="Overview")
+        ov_grp = Adw.PreferencesGroup(title=_("Overview"))
         ov_node = next((n for n in nodes if n.name == "overview"), None)
         ws_shadow_node = ov_node.get_child("workspace-shadow") if ov_node else None
 
@@ -130,8 +133,8 @@ class GesturesPage(BasePage):
             ws_shadow_node is None or ws_shadow_node.get_child("off") is None
         )
         ws_shadow_row = Adw.SwitchRow(
-            title="Workspace Shadow in Overview",
-            subtitle="Show drop shadows under workspaces in overview mode",
+            title=_("Workspace Shadow in Overview"),
+            subtitle=_("Show drop shadows under workspaces in overview mode"),
         )
         ws_shadow_row.set_active(ws_shadow_initial)
         safe_switch_connect(
