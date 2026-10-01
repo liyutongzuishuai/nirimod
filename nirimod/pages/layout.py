@@ -26,7 +26,7 @@ CENTER_OPTIONS = ["never", "always", "on-overflow"]
 
 class LayoutPage(BasePage):
     def build(self) -> Gtk.Widget:
-        tb, _, _, content = self._make_toolbar_page(_("Layout"))
+        tb, __, ___, content = self._make_toolbar_page(_("Layout"))
         self._content = content
         self._build_content()
         return tb

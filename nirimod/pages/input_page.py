@@ -28,7 +28,7 @@ CLICK_METHODS = ["button-areas", "clickfinger"]
 
 class InputPage(BasePage):
     def build(self) -> Gtk.Widget:
-        tb, _, _, content = self._make_toolbar_page(_("Input"))
+        tb, __, ___, content = self._make_toolbar_page(_("Input"))
         self._content = content
         self._build_content()
         return tb

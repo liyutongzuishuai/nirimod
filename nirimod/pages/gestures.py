@@ -30,7 +30,7 @@ _CORNERS = [
 
 class GesturesPage(BasePage):
     def build(self) -> Gtk.Widget:
-        tb, _, _, content = self._make_toolbar_page(_("Gestures & Misc"))
+        tb, __, ___, content = self._make_toolbar_page(_("Gestures & Misc"))
         self._content = content
         self._build_content()
         return tb

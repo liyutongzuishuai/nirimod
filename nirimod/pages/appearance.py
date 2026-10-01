@@ -39,7 +39,7 @@ def _parse_color(color_str: str) -> Gdk.RGBA:
 
 class AppearancePage(BasePage):
     def build(self) -> Gtk.Widget:
-        tb, _, _, content = self._make_toolbar_page("Appearance")
+        tb, __, ___, content = self._make_toolbar_page("Appearance")
         self._content = content
         self._build_content()
         return tb
