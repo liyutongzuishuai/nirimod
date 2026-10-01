@@ -21,6 +21,11 @@ _DEFAULTS: dict = {
 
 _cache: dict | None = None
 
+# Initialize gettext
+gettext.bindtextdomain("nirimod", str(LOCALE_DIR))
+gettext.textdomain("nirimod")
+_ = gettext.gettext
+
 
 def _load() -> dict:
     global _cache

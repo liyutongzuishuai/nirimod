@@ -2,9 +2,6 @@
 
 from __future__ import annotations
 
-import gettext
-import locale
-import os
 import sys
 
 try:
@@ -38,12 +35,6 @@ except ModuleNotFoundError:
         file=sys.stderr,
     )
     sys.exit(1)
-
-# Set up gettext for internationalization
-LOCALE_DIR = os.path.join(os.path.dirname(__file__), "locale")
-gettext.bindtextdomain("nirimod", LOCALE_DIR)
-gettext.textdomain("nirimod")
-_ = gettext.gettext
 
 gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")

@@ -10,6 +10,10 @@ gi.require_version("Gio", "2.0")
 
 from gi.repository import Adw, Gtk, Gio
 
+from nirimod import app_settings
+
+_ = app_settings._
+
 if TYPE_CHECKING:
     from nirimod.window import NiriModWindow
 
@@ -25,16 +29,16 @@ def make_toolbar_page(
     # Hamburger menu on the content header (appears next to window close button)
     if window is not None:
         menu = Gio.Menu()
-        menu.append("Profiles", "win.open_profiles")
-        menu.append("Preferences", "win.open_preferences")
-        menu.append("Restore Backup...", "win.reset_config")
+        menu.append(_("Profiles"), "win.open_profiles")
+        menu.append(_("Preferences"), "win.open_preferences")
+        menu.append(_("Restore Backup..."), "win.reset_config")
 
         kofi_section = Gio.Menu()
-        kofi_section.append("Support on Ko-fi", "win.open_kofi")
+        kofi_section.append(_("Support on Ko-fi"), "win.open_kofi")
         menu.append_section(None, kofi_section)
 
         menu_btn = Gtk.MenuButton(icon_name="open-menu-symbolic")
-        menu_btn.set_tooltip_text("Menu")
+        menu_btn.set_tooltip_text(_("Menu"))
         menu_btn.add_css_class("flat")
         menu_btn.set_menu_model(menu)
         header.pack_end(menu_btn)

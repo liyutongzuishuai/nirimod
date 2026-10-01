@@ -9,6 +9,7 @@ gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 from gi.repository import Adw, Gtk
 
+from nirimod import app_settings
 from nirimod.kdl_parser import KdlNode, find_or_create, set_child_arg, remove_child
 from nirimod.column_display import (
     COLUMN_DISPLAY_LABELS,
@@ -17,13 +18,15 @@ from nirimod.column_display import (
 )
 from nirimod.pages.base import BasePage
 
+_ = app_settings._
+
 
 CENTER_OPTIONS = ["never", "always", "on-overflow"]
 
 
 class LayoutPage(BasePage):
     def build(self) -> Gtk.Widget:
-        tb, _, _, content = self._make_toolbar_page("Layout")
+        tb, _, _, content = self._make_toolbar_page(_("Layout"))
         self._content = content
         self._build_content()
         return tb
@@ -33,11 +36,11 @@ class LayoutPage(BasePage):
         nodes = self._nodes
         layout = find_or_create(nodes, "layout")
 
-        basic_grp = Adw.PreferencesGroup(title="General")
+        basic_grp = Adw.PreferencesGroup(title=_("General"))
 
         gaps_val = int(layout.child_arg("gaps") or 16)
         gaps_adj = Gtk.Adjustment(value=gaps_val, lower=0, upper=200, step_increment=2)
-        gaps_row = Adw.SpinRow(title="Window Gaps (px)", adjustment=gaps_adj, digits=0)
+        gaps_row = Adw.SpinRow(title=_("Window Gaps (px)"), adjustment=gaps_adj, digits=0)
 
         gaps_row._last_val = gaps_val
 
@@ -51,7 +54,7 @@ class LayoutPage(BasePage):
         basic_grp.add(gaps_row)
 
         cfc_model = Gtk.StringList.new(CENTER_OPTIONS)
-        cfc_row = Adw.ComboRow(title="Center Focused Column", model=cfc_model)
+        cfc_row = Adw.ComboRow(title=_("Center Focused Column"), model=cfc_model)
         cur_cfc = layout.child_arg("center-focused-column") or "never"
         if cur_cfc in CENTER_OPTIONS:
             cfc_row.set_selected(CENTER_OPTIONS.index(cur_cfc))
@@ -65,8 +68,8 @@ class LayoutPage(BasePage):
 
         display_model = Gtk.StringList.new(COLUMN_DISPLAY_LABELS)
         display_row = Adw.ComboRow(
-            title="Default Column Display",
-            subtitle="How new columns open",
+            title=_("Default Column Display"),
+            subtitle=_("How new columns open"),
             model=display_model,
         )
         display_row.set_selected(
@@ -81,7 +84,8 @@ class LayoutPage(BasePage):
         basic_grp.add(display_row)
 
         prefer_csd_row = Adw.SwitchRow(
-            title="Prefer No CSD", subtitle="Ask apps to omit client-side decorations"
+            title=_("Prefer No CSD"),
+            subtitle=_("Ask apps to omit client-side decorations"),
         )
         prefer_csd_row.set_active(any(n.name == "prefer-no-csd" for n in nodes))
         prefer_csd_row.connect(
@@ -91,7 +95,9 @@ class LayoutPage(BasePage):
         basic_grp.add(prefer_csd_row)
 
         bg_color_val = str(layout.child_arg("background-color") or "transparent")
-        bg_row = Adw.EntryRow(title="Background Color (e.g. transparent, #000000)")
+        bg_row = Adw.EntryRow(
+            title=_("Background Color (e.g. transparent, #000000)")
+        )
         bg_row.set_text(bg_color_val)
         bg_row.set_show_apply_button(True)
         bg_row.connect(
@@ -102,7 +108,7 @@ class LayoutPage(BasePage):
 
         content.append(basic_grp)
 
-        dcw_grp = Adw.PreferencesGroup(title="Default Column Width")
+        dcw_grp = Adw.PreferencesGroup(title=_("Default Column Width"))
         dcw_node = layout.get_child("default-column-width")
 
         prop_val = 0.5
@@ -118,8 +124,8 @@ class LayoutPage(BasePage):
             elif pc and pc.args:
                 prop_val = float(pc.args[0])
 
-        mode_model = Gtk.StringList.new(["Proportion", "Fixed (px)"])
-        mode_row = Adw.ComboRow(title="Mode", model=mode_model)
+        mode_model = Gtk.StringList.new([_("Proportion"), _("Fixed (px)")])
+        mode_row = Adw.ComboRow(title=_("Mode"), model=mode_model)
         mode_row.set_selected(1 if use_fixed else 0)
         dcw_grp.add(mode_row)
 
@@ -131,7 +137,7 @@ class LayoutPage(BasePage):
         prop_spin.connect(
             "value-changed", lambda s: self._set_dcw_proportion(s.get_value())
         )
-        prop_row = Adw.ActionRow(title="Proportion")
+        prop_row = Adw.ActionRow(title=_("Proportion"))
         prop_row.add_suffix(prop_spin)
         prop_row.set_visible(not use_fixed)
         dcw_grp.add(prop_row)
@@ -144,7 +150,7 @@ class LayoutPage(BasePage):
         fixed_spin.connect(
             "value-changed", lambda s: self._set_dcw_fixed(int(s.get_value()))
         )
-        fixed_row = Adw.ActionRow(title="Fixed Width (px)")
+        fixed_row = Adw.ActionRow(title=_("Fixed Width (px)"))
         fixed_row.add_suffix(fixed_spin)
         fixed_row.set_visible(use_fixed)
         dcw_grp.add(fixed_row)
@@ -161,8 +167,8 @@ class LayoutPage(BasePage):
         mode_row.connect("notify::selected", _on_mode_changed)
         content.append(dcw_grp)
 
-        pw_grp = Adw.PreferencesGroup(title="Preset Column Widths (proportions)")
-        pw_grp.set_description("Cycled through by Mod+R")
+        pw_grp = Adw.PreferencesGroup(title=_("Preset Column Widths (proportions)"))
+        pw_grp.set_description(_("Cycled through by Mod+R"))
         pcw_node = layout.get_child("preset-column-widths")
         presets = []
         if pcw_node:
@@ -173,18 +179,27 @@ class LayoutPage(BasePage):
 
         for val in presets or [0.333, 0.5, 0.667]:
             self._add_preset_row(pw_grp, val)
-        add_preset_btn = Gtk.Button(label="Add Preset")
+        add_preset_btn = Gtk.Button(label=_("Add Preset"))
         add_preset_btn.add_css_class("flat")
         add_preset_btn.connect("clicked", lambda *_: self._add_preset_row(pw_grp, 0.5))
         pw_grp.set_header_suffix(add_preset_btn)
         content.append(pw_grp)
 
-        struts_grp = Adw.PreferencesGroup(title="Struts (outer gaps, px)")
+        struts_grp = Adw.PreferencesGroup(title=_("Struts (outer gaps, px)"))
         struts_node = layout.get_child("struts")
         for side in ["left", "right", "top", "bottom"]:
             val = int(struts_node.child_arg(side) or 0) if struts_node else 0
             adj = Gtk.Adjustment(value=val, lower=0, upper=500, step_increment=4)
-            row = Adw.SpinRow(title=side.capitalize(), adjustment=adj, digits=0)
+            row = Adw.SpinRow(
+                title={
+                    "left": _("Left"),
+                    "right": _("Right"),
+                    "top": _("Top"),
+                    "bottom": _("Bottom"),
+                }[side],
+                adjustment=adj,
+                digits=0,
+            )
 
             row._last_val = val
 
