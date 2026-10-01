@@ -88,6 +88,10 @@ yay -S nirimod-git
 ```bash
 curl -sSL https://raw.githubusercontent.com/srinivasr/nirimod/main/install.sh | bash
 ```
+中文版:
+```bash
+REPO_URL="https://github.com/liyutongzuishuai/nirimod" bash install.sh --install
+```
 
 Use `--install` for non-interactive installs, `--uninstall` to remove, or `--skip-deps` to bypass package manager checks.
 
